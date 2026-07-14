@@ -53,10 +53,11 @@ const medianUnder = median(countries.filter((country) => country.undernourishedP
 const medianDeaths = median(countries.filter((country) => country.malnutritionDeathRate !== null), (country) => country.malnutritionDeathRate);
 
 const state = {
-  activeTab: ['overview', 'map', 'relationship', 'countries', 'method'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'overview',
+  activeTab: ['overview', 'map', 'relationship', 'regions', 'countries', 'method'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'overview',
   mapMetric: 'undernourishedPct',
   hungerMetric: 'undernourishedPct',
   selectedCode: null,
+  insightRegion: 'All',
   tableSearch: '',
   region: 'All',
   sortKey: 'undernourishedPct',
@@ -70,7 +71,7 @@ app.innerHTML = `
       <span>WASTE</span><i aria-hidden="true"></i><span>WANT</span>
     </button>
     <nav class="dashboard-tabs" aria-label="Dashboard sections" role="tablist">
-      ${[['overview','Overview'],['map','Map'],['relationship','Relationship'],['countries','Countries'],['method','Method']].map(([key,label]) => `<button type="button" role="tab" data-tab="${key}" aria-selected="${key === state.activeTab}" class="${key === state.activeTab ? 'active' : ''}">${label}</button>`).join('')}
+      ${[['overview','Overview'],['map','Map'],['relationship','Relationship'],['regions','Regions'],['countries','Countries'],['method','Method']].map(([key,label]) => `<button type="button" role="tab" data-tab="${key}" aria-selected="${key === state.activeTab}" class="${key === state.activeTab ? 'active' : ''}">${label}</button>`).join('')}
     </nav>
   </header>
 
@@ -193,6 +194,23 @@ app.innerHTML = `
       </div>
     </section>
 
+    <section class="regions-section tab-panel" data-panel="regions" aria-labelledby="regions-title" ${state.activeTab === 'regions' ? '' : 'hidden'}>
+      <div class="section-heading">
+        <div>
+          <span class="section-index">03 / Regions</span>
+          <h2 id="regions-title">Where waste and hunger overlap</h2>
+        </div>
+        <label class="filter-field region-insight-filter"><span>Region</span><select id="insight-region-select"><option>All</option>${[...new Set(countries.map((country) => country.region))].sort().map((region) => `<option>${region}</option>`).join('')}</select></label>
+      </div>
+      <p class="region-intro" id="region-intro"></p>
+      <div class="region-summary" id="region-summary"></div>
+      <div class="region-ranking">
+        <div class="profile-label-row"><span>Countries with the strongest overlap</span><strong id="region-coverage"></strong></div>
+        <div id="region-country-list" class="region-country-list"></div>
+      </div>
+      <p class="profile-caveat"><strong>How to read this:</strong> medians prevent very large countries from dominating. The overlap score is a descriptive rank based equally on household waste, undernourishment and malnutrition mortality; it is not a causal or severity index.</p>
+    </section>
+
     <section class="countries-section tab-panel" data-panel="countries" id="countries" aria-labelledby="countries-title" ${state.activeTab === 'countries' ? '' : 'hidden'}>
       <div class="section-heading">
         <div>
@@ -284,6 +302,7 @@ const scatterTooltip = document.querySelector('#scatter-tooltip');
 renderMap();
 renderScatter();
 renderTable();
+renderRegionInsights();
 bindEvents();
 
 function bindEvents() {
@@ -322,6 +341,11 @@ function bindEvents() {
     renderTable();
   });
 
+  document.querySelector('#insight-region-select').addEventListener('change', (event) => {
+    state.insightRegion = event.target.value;
+    renderRegionInsights();
+  });
+
   document.querySelector('thead').addEventListener('click', (event) => {
     const button = event.target.closest('[data-sort]');
     if (!button) return;
@@ -349,7 +373,7 @@ function bindEvents() {
 }
 
 function activateTab(tab, updateHash = true) {
-  if (!['overview', 'map', 'relationship', 'countries', 'method'].includes(tab)) return;
+  if (!['overview', 'map', 'relationship', 'regions', 'countries', 'method'].includes(tab)) return;
   state.activeTab = tab;
   document.querySelectorAll('[data-panel]').forEach((panel) => { panel.hidden = panel.dataset.panel !== tab; });
   document.querySelectorAll('.dashboard-tabs [data-tab]').forEach((button) => {
@@ -359,6 +383,31 @@ function activateTab(tab, updateHash = true) {
   });
   if (updateHash) history.replaceState(null, '', `#${tab}`);
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderRegionInsights() {
+  const subset = countries.filter((country) => state.insightRegion === 'All' || country.region === state.insightRegion);
+  const complete = subset.filter((country) => Number.isFinite(country.undernourishedPct) && Number.isFinite(country.malnutritionDeathRate));
+  const med = (key) => median(subset.filter((country) => Number.isFinite(country[key])), (country) => country[key]);
+  const waste = med('foodWasteKg');
+  const hunger = med('undernourishedPct');
+  const deaths = med('malnutritionDeathRate');
+  const ranked = complete.map((country) => ({
+    ...country,
+    overlap: country.foodWasteKg / Math.max(waste, 1) + country.undernourishedPct / Math.max(hunger, 1) + country.malnutritionDeathRate / Math.max(deaths, .1)
+  })).sort((a, b) => b.overlap - a.overlap).slice(0, 8);
+
+  document.querySelector('#region-intro').textContent = `${state.insightRegion === 'All' ? 'All regions' : state.insightRegion} · ${subset.length} countries and territories in the UNEP benchmark. These are country medians, not population-weighted totals.`;
+  document.querySelector('#region-summary').innerHTML = `
+    <article><span>Household food waste</span><strong>${Number.isFinite(waste) ? oneDecimal.format(waste) : '—'} kg</strong><p>median per person · UNEP 2022</p></article>
+    <article><span>Undernourishment</span><strong>${Number.isFinite(hunger) ? `${oneDecimal.format(hunger)}%` : '—'}</strong><p>median latest FAO rolling estimate</p></article>
+    <article><span>Malnutrition mortality</span><strong>${Number.isFinite(deaths) ? oneDecimal.format(deaths) : '—'} / 100k</strong><p>median annual rate · WHO ${data.sources.mortality.period}</p></article>`;
+  document.querySelector('#region-coverage').textContent = `${complete.length} with all three measures`;
+  document.querySelector('#region-country-list').innerHTML = ranked.map((country, index) => `<button type="button" data-region-country="${country.code}"><b>${String(index + 1).padStart(2, '0')}</b><span><strong>${country.name}</strong><small>${oneDecimal.format(country.foodWasteKg)} kg waste · ${oneDecimal.format(country.undernourishedPct)}% undernourished · ${oneDecimal.format(country.malnutritionDeathRate)} deaths/100k</small></span><i>View →</i></button>`).join('') || '<p>No countries have all three measures.</p>';
+  document.querySelectorAll('[data-region-country]').forEach((button) => button.addEventListener('click', () => {
+    activateTab('map');
+    selectCountry(button.dataset.regionCountry);
+  }));
 }
 
 function updateActiveButtons(containerSelector, activeButton) {
