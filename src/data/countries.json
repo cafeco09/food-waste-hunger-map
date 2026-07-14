@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T23:57:12.633Z",
+  "generatedAt": "2026-07-14T02:45:37.894Z",
   "sources": {
     "foodWaste": {
       "producer": "UNEP",
@@ -13,7 +13,8 @@
     },
     "mortality": {
       "producer": "WHO",
-      "year": 2021,
+      "period": "2019–2021",
+      "aggregation": "three-year annual average",
       "accessedVia": "Our World in Data"
     }
   },
@@ -21,8 +22,8 @@
     "foodWasteKg": 79.1,
     "undernourishedPct": 8.2,
     "undernourishedMillions": 673.2,
-    "malnutritionDeathRate": 2.48,
-    "malnutritionDeaths": 196219
+    "malnutritionDeathRate": 2.53,
+    "malnutritionDeaths": 197899
   },
   "countries": [
     {
@@ -39,9 +40,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 11.7,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.57,
-      "malnutritionDeaths": 631,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.81,
+      "malnutritionDeaths": 705,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "DZA",
@@ -58,8 +60,9 @@
       "undernourishedMillions": 1,
       "undernourishedPeopleYear": 2017,
       "malnutritionDeathRate": 0.21,
-      "malnutritionDeaths": 94,
-      "mortalityYear": 2021
+      "malnutritionDeaths": 92,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ASM",
@@ -77,7 +80,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "AND",
@@ -93,9 +97,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.01,
+      "malnutritionDeathRate": 0.02,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "AGO",
@@ -111,9 +116,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 8.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 9.07,
-      "malnutritionDeaths": 3128,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 9.67,
+      "malnutritionDeaths": 3229,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "AIA",
@@ -131,7 +137,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "ATG",
@@ -147,9 +154,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.7,
+      "malnutritionDeathRate": 0.63,
       "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ARG",
@@ -165,9 +173,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.5,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.92,
-      "malnutritionDeaths": 871,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.84,
+      "malnutritionDeaths": 830,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ARM",
@@ -183,9 +192,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2009,
-      "malnutritionDeathRate": 0.02,
+      "malnutritionDeathRate": 0.05,
       "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ABW",
@@ -203,7 +213,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "AUS",
@@ -219,9 +230,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.52,
-      "malnutritionDeaths": 134,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.47,
+      "malnutritionDeaths": 121,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "AUT",
@@ -237,9 +249,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.82,
-      "malnutritionDeaths": 73,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.71,
+      "malnutritionDeaths": 63,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "AZE",
@@ -255,9 +268,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.3,
       "undernourishedPeopleYear": 2006,
-      "malnutritionDeathRate": 0.22,
-      "malnutritionDeaths": 23,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.23,
+      "malnutritionDeaths": 24,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BHS",
@@ -273,9 +287,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.33,
-      "malnutritionDeaths": 5,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.42,
+      "malnutritionDeaths": 6,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BHR",
@@ -291,9 +306,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.29,
+      "malnutritionDeathRate": 0.27,
       "malnutritionDeaths": 4,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BGD",
@@ -309,9 +325,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 17.9,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.79,
-      "malnutritionDeaths": 1342,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.87,
+      "malnutritionDeaths": 1462,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BRB",
@@ -327,9 +344,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.81,
+      "malnutritionDeathRate": 0.85,
       "malnutritionDeaths": 2,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BLR",
@@ -346,8 +364,9 @@
       "undernourishedMillions": 0.3,
       "undernourishedPeopleYear": 2005,
       "malnutritionDeathRate": 0.16,
-      "malnutritionDeaths": 15,
-      "mortalityYear": 2021
+      "malnutritionDeaths": 16,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BEL",
@@ -363,9 +382,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.79,
-      "malnutritionDeaths": 208,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.94,
+      "malnutritionDeaths": 225,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BLZ",
@@ -381,9 +401,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.48,
+      "malnutritionDeathRate": 2.61,
       "malnutritionDeaths": 10,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BEN",
@@ -399,9 +420,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 4.92,
-      "malnutritionDeaths": 640,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 5.25,
+      "malnutritionDeaths": 664,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BMU",
@@ -419,7 +441,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "BTN",
@@ -435,9 +458,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.13,
+      "malnutritionDeathRate": 0.14,
       "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BOL",
@@ -453,9 +477,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.7,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 4.12,
-      "malnutritionDeaths": 497,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.46,
+      "malnutritionDeaths": 532,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BIH",
@@ -473,7 +498,8 @@
       "undernourishedPeopleYear": 2003,
       "malnutritionDeathRate": 0.08,
       "malnutritionDeaths": 3,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BWA",
@@ -489,9 +515,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.6,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 3.91,
-      "malnutritionDeaths": 101,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.21,
+      "malnutritionDeaths": 107,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BRA",
@@ -507,9 +534,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 6.7,
       "undernourishedPeopleYear": 2022,
-      "malnutritionDeathRate": 2.35,
-      "malnutritionDeaths": 5031,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.47,
+      "malnutritionDeaths": 5261,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "VGB",
@@ -527,7 +555,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "BRN",
@@ -543,9 +572,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.17,
+      "malnutritionDeathRate": 0.2,
       "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BGR",
@@ -563,7 +593,8 @@
       "undernourishedPeopleYear": 2020,
       "malnutritionDeathRate": 0.03,
       "malnutritionDeaths": 2,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BFA",
@@ -579,9 +610,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 10.32,
-      "malnutritionDeaths": 2281,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 11.11,
+      "malnutritionDeaths": 2387,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BDI",
@@ -597,9 +629,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 14.44,
-      "malnutritionDeaths": 1812,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 14.87,
+      "malnutritionDeaths": 1815,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "KHM",
@@ -615,9 +648,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.9,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.69,
-      "malnutritionDeaths": 447,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.65,
+      "malnutritionDeaths": 435,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CMR",
@@ -633,9 +667,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 3.84,
-      "malnutritionDeaths": 1045,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.04,
+      "malnutritionDeaths": 1069,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CAN",
@@ -651,9 +686,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.65,
-      "malnutritionDeaths": 249,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.6,
+      "malnutritionDeaths": 227,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CPV",
@@ -669,9 +705,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.57,
-      "malnutritionDeaths": 9,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.64,
+      "malnutritionDeaths": 10,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "BES",
@@ -689,7 +726,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "CYM",
@@ -707,7 +745,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "CAF",
@@ -723,9 +762,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.6,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 14,
-      "malnutritionDeaths": 764,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 14.87,
+      "malnutritionDeaths": 793,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TCD",
@@ -741,9 +781,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 6.2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 12.22,
-      "malnutritionDeaths": 2100,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 12.51,
+      "malnutritionDeaths": 2081,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CHL",
@@ -759,9 +800,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.5,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.87,
-      "malnutritionDeaths": 364,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.88,
+      "malnutritionDeaths": 361,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CHN",
@@ -777,9 +819,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 38.5,
       "undernourishedPeopleYear": 2009,
-      "malnutritionDeathRate": 0.93,
-      "malnutritionDeaths": 13287,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.91,
+      "malnutritionDeaths": 12999,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "COL",
@@ -795,9 +838,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 4.14,
-      "malnutritionDeaths": 2131,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.8,
+      "malnutritionDeaths": 1933,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "COM",
@@ -813,9 +857,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 7.87,
-      "malnutritionDeaths": 65,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 8.25,
+      "malnutritionDeaths": 67,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "COK",
@@ -831,9 +876,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.24,
+      "malnutritionDeathRate": 0.2,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CRI",
@@ -849,9 +895,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2014,
-      "malnutritionDeathRate": 0.67,
-      "malnutritionDeaths": 34,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.78,
+      "malnutritionDeaths": 40,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "HRV",
@@ -869,7 +916,8 @@
       "undernourishedPeopleYear": 2011,
       "malnutritionDeathRate": 0,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CUB",
@@ -885,9 +933,10 @@
       "undernourishmentYear": 2006,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.29,
-      "malnutritionDeaths": 33,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.39,
+      "malnutritionDeaths": 44,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CUW",
@@ -905,7 +954,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "CYP",
@@ -921,9 +971,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2007,
-      "malnutritionDeathRate": 0.2,
-      "malnutritionDeaths": 2,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.3,
+      "malnutritionDeaths": 4,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CZE",
@@ -939,9 +990,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 2.43,
-      "malnutritionDeaths": 255,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.59,
+      "malnutritionDeaths": 272,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "DNK",
@@ -957,9 +1009,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0,
-      "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.2,
+      "malnutritionDeaths": 12,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "DJI",
@@ -975,9 +1028,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 9.01,
-      "malnutritionDeaths": 100,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 9.35,
+      "malnutritionDeaths": 102,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "DMA",
@@ -993,9 +1047,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.12,
+      "malnutritionDeathRate": 1.18,
       "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "DOM",
@@ -1011,9 +1066,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 3.79,
-      "malnutritionDeaths": 421,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.68,
+      "malnutritionDeaths": 405,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "COD",
@@ -1029,9 +1085,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 40.7,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 7.3,
-      "malnutritionDeaths": 6999,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 7.16,
+      "malnutritionDeaths": 6652,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ECU",
@@ -1047,9 +1104,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.61,
-      "malnutritionDeaths": 464,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.71,
+      "malnutritionDeaths": 475,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "EGY",
@@ -1065,9 +1123,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 10.8,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.21,
-      "malnutritionDeaths": 228,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.23,
+      "malnutritionDeaths": 243,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SLV",
@@ -1083,9 +1142,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 4.49,
-      "malnutritionDeaths": 284,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.52,
+      "malnutritionDeaths": 285,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GNQ",
@@ -1101,9 +1161,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 3.72,
-      "malnutritionDeaths": 61,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.98,
+      "malnutritionDeaths": 63,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ERI",
@@ -1119,9 +1180,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 15.47,
-      "malnutritionDeaths": 560,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 15.93,
+      "malnutritionDeaths": 567,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "EST",
@@ -1137,9 +1199,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2004,
-      "malnutritionDeathRate": 0.15,
-      "malnutritionDeaths": 2,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.1,
+      "malnutritionDeaths": 1,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SWZ",
@@ -1155,9 +1218,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 6.67,
-      "malnutritionDeaths": 80,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 7.01,
+      "malnutritionDeaths": 83,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ETH",
@@ -1173,9 +1237,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 25.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 7.69,
-      "malnutritionDeaths": 9254,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 8.08,
+      "malnutritionDeaths": 9463,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "FLK",
@@ -1193,7 +1258,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "FRO",
@@ -1211,7 +1277,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "FJI",
@@ -1227,9 +1294,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.24,
+      "malnutritionDeathRate": 1.32,
       "malnutritionDeaths": 12,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "FIN",
@@ -1245,9 +1313,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.24,
-      "malnutritionDeaths": 13,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.19,
+      "malnutritionDeaths": 11,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "FRA",
@@ -1263,9 +1332,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 7.59,
-      "malnutritionDeaths": 4896,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 7.52,
+      "malnutritionDeaths": 4847,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GUF",
@@ -1283,7 +1353,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "PYF",
@@ -1301,7 +1372,8 @@
       "undernourishedPeopleYear": 2023,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "GAB",
@@ -1317,9 +1389,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.6,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.74,
-      "malnutritionDeaths": 64,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.12,
+      "malnutritionDeaths": 71,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GMB",
@@ -1335,9 +1408,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.5,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 4.22,
-      "malnutritionDeaths": 111,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.64,
+      "malnutritionDeaths": 119,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GEO",
@@ -1353,9 +1427,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2022,
-      "malnutritionDeathRate": 0.06,
-      "malnutritionDeaths": 2,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.02,
+      "malnutritionDeaths": 1,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "DEU",
@@ -1371,9 +1446,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.1,
-      "malnutritionDeaths": 915,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.98,
+      "malnutritionDeaths": 817,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GHA",
@@ -1389,9 +1465,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 5.9,
-      "malnutritionDeaths": 1937,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 6.27,
+      "malnutritionDeaths": 2016,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GIB",
@@ -1409,7 +1486,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "GRC",
@@ -1425,9 +1503,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.05,
+      "malnutritionDeathRate": 0.04,
       "malnutritionDeaths": 5,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GRL",
@@ -1445,7 +1524,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "GRD",
@@ -1461,9 +1541,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.97,
-      "malnutritionDeaths": 2,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.51,
+      "malnutritionDeaths": 3,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GLP",
@@ -1481,7 +1562,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "GUM",
@@ -1499,7 +1581,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "GTM",
@@ -1515,9 +1598,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 6.06,
-      "malnutritionDeaths": 1067,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 6.97,
+      "malnutritionDeaths": 1208,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GIN",
@@ -1533,9 +1617,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.6,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 8.17,
-      "malnutritionDeaths": 1106,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 8.37,
+      "malnutritionDeaths": 1105,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GNB",
@@ -1551,9 +1636,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.5,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 4.32,
+      "malnutritionDeathRate": 4.39,
       "malnutritionDeaths": 89,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GUY",
@@ -1569,9 +1655,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2020,
-      "malnutritionDeathRate": 3.4,
-      "malnutritionDeaths": 27,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.13,
+      "malnutritionDeaths": 33,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "HTI",
@@ -1587,9 +1674,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 6.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 6.23,
-      "malnutritionDeaths": 713,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 5.26,
+      "malnutritionDeaths": 595,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "HND",
@@ -1605,9 +1693,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.6,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.05,
-      "malnutritionDeaths": 211,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.2,
+      "malnutritionDeaths": 223,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "HKG",
@@ -1625,7 +1714,8 @@
       "undernourishedPeopleYear": 2023,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "HUN",
@@ -1641,9 +1731,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.3,
       "undernourishedPeopleYear": 2005,
-      "malnutritionDeathRate": 0.12,
-      "malnutritionDeaths": 11,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.17,
+      "malnutritionDeaths": 17,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ISL",
@@ -1659,9 +1750,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.7,
-      "malnutritionDeaths": 3,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.45,
+      "malnutritionDeaths": 2,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "IND",
@@ -1677,9 +1769,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 172.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.61,
-      "malnutritionDeaths": 8536,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.76,
+      "malnutritionDeaths": 10575,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "IDN",
@@ -1695,9 +1788,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 17.7,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 6.59,
-      "malnutritionDeaths": 18047,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 7.26,
+      "malnutritionDeaths": 19718,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "IRN",
@@ -1713,9 +1807,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 6.2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.14,
-      "malnutritionDeaths": 126,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.15,
+      "malnutritionDeaths": 130,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "IRQ",
@@ -1731,9 +1826,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 6.7,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.33,
-      "malnutritionDeaths": 143,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.32,
+      "malnutritionDeaths": 138,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "IRL",
@@ -1749,9 +1845,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.15,
+      "malnutritionDeathRate": 0.14,
       "malnutritionDeaths": 7,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "IMN",
@@ -1769,7 +1866,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "ISR",
@@ -1787,7 +1885,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": 0.1,
       "malnutritionDeaths": 9,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ITA",
@@ -1803,9 +1902,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.37,
-      "malnutritionDeaths": 810,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.3,
+      "malnutritionDeaths": 772,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CIV",
@@ -1821,9 +1921,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 3.5,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 3.19,
-      "malnutritionDeaths": 877,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.22,
+      "malnutritionDeaths": 863,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "JAM",
@@ -1839,9 +1940,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.71,
-      "malnutritionDeaths": 77,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.57,
+      "malnutritionDeaths": 72,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "JPN",
@@ -1857,9 +1959,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.95,
-      "malnutritionDeaths": 2425,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.87,
+      "malnutritionDeaths": 2335,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "JOR",
@@ -1877,7 +1980,8 @@
       "undernourishedPeopleYear": 2023,
       "malnutritionDeathRate": 0.08,
       "malnutritionDeaths": 8,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "KAZ",
@@ -1893,9 +1997,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.4,
       "undernourishedPeopleYear": 2013,
-      "malnutritionDeathRate": 0.33,
-      "malnutritionDeaths": 64,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.37,
+      "malnutritionDeaths": 70,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "KEN",
@@ -1911,9 +2016,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 20.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 6.25,
-      "malnutritionDeaths": 3311,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 7.07,
+      "malnutritionDeaths": 3672,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "KIR",
@@ -1929,9 +2035,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 9.25,
-      "malnutritionDeaths": 12,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 9.9,
+      "malnutritionDeaths": 13,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "KWT",
@@ -1949,7 +2056,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": 0,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "KGZ",
@@ -1965,9 +2073,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.04,
+      "malnutritionDeathRate": 0.05,
       "malnutritionDeaths": 3,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LAO",
@@ -1983,9 +2092,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 4.23,
-      "malnutritionDeaths": 314,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.63,
+      "malnutritionDeaths": 266,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LVA",
@@ -2001,9 +2111,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2004,
-      "malnutritionDeathRate": 0.13,
+      "malnutritionDeathRate": 0.08,
       "malnutritionDeaths": 2,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LBN",
@@ -2019,9 +2130,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.5,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.18,
-      "malnutritionDeaths": 10,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.19,
+      "malnutritionDeaths": 11,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LSO",
@@ -2037,9 +2149,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 11.96,
-      "malnutritionDeaths": 273,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 12.88,
+      "malnutritionDeaths": 290,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LBR",
@@ -2055,9 +2168,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 3.66,
-      "malnutritionDeaths": 190,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.15,
+      "malnutritionDeaths": 211,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LBY",
@@ -2075,7 +2189,8 @@
       "undernourishedPeopleYear": 2023,
       "malnutritionDeathRate": 0.19,
       "malnutritionDeaths": 13,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LIE",
@@ -2093,7 +2208,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "LTU",
@@ -2109,9 +2225,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.23,
+      "malnutritionDeathRate": 0.25,
       "malnutritionDeaths": 7,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LUX",
@@ -2127,9 +2244,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 2.19,
-      "malnutritionDeaths": 14,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.33,
+      "malnutritionDeaths": 15,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MAC",
@@ -2147,7 +2265,8 @@
       "undernourishedPeopleYear": 2023,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "MDG",
@@ -2163,9 +2282,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 12.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 21.6,
-      "malnutritionDeaths": 6245,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 23.03,
+      "malnutritionDeaths": 6495,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MWI",
@@ -2181,9 +2301,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 4.5,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 7.36,
-      "malnutritionDeaths": 1464,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 8.04,
+      "malnutritionDeaths": 1556,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MYS",
@@ -2199,9 +2320,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.9,
       "undernourishedPeopleYear": 2020,
-      "malnutritionDeathRate": 1.01,
-      "malnutritionDeaths": 339,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.93,
+      "malnutritionDeaths": 309,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MDV",
@@ -2217,9 +2339,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 2.74,
-      "malnutritionDeaths": 14,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.97,
+      "malnutritionDeaths": 15,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MLI",
@@ -2235,9 +2358,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.9,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 22.98,
-      "malnutritionDeaths": 5034,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 23.92,
+      "malnutritionDeaths": 5072,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MLT",
@@ -2255,7 +2379,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": 0,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MHL",
@@ -2271,9 +2396,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.36,
+      "malnutritionDeathRate": 1.47,
       "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MTQ",
@@ -2291,7 +2417,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "MRT",
@@ -2307,9 +2434,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.22,
-      "malnutritionDeaths": 102,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.34,
+      "malnutritionDeaths": 105,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MUS",
@@ -2325,9 +2453,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.23,
-      "malnutritionDeaths": 16,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.88,
+      "malnutritionDeaths": 11,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MYT",
@@ -2345,7 +2474,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "MEX",
@@ -2361,9 +2491,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 3.5,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 4.53,
-      "malnutritionDeaths": 5741,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.86,
+      "malnutritionDeaths": 6119,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "FSM",
@@ -2379,9 +2510,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.92,
+      "malnutritionDeathRate": 1.89,
       "malnutritionDeaths": 2,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MDA",
@@ -2397,9 +2529,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2016,
-      "malnutritionDeathRate": 0.01,
-      "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.02,
+      "malnutritionDeaths": 1,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MCO",
@@ -2415,9 +2548,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.82,
+      "malnutritionDeathRate": 0.81,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MNG",
@@ -2435,7 +2569,8 @@
       "undernourishedPeopleYear": 2021,
       "malnutritionDeathRate": 0.08,
       "malnutritionDeaths": 3,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MNE",
@@ -2451,9 +2586,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2006,
-      "malnutritionDeathRate": 0.07,
-      "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.08,
+      "malnutritionDeaths": 1,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MSR",
@@ -2471,7 +2607,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "MAR",
@@ -2487,9 +2624,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.6,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.3,
+      "malnutritionDeathRate": 0.31,
       "malnutritionDeaths": 112,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MOZ",
@@ -2505,9 +2643,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 7.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 9.61,
-      "malnutritionDeaths": 3083,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 11.25,
+      "malnutritionDeaths": 3499,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MMR",
@@ -2523,9 +2662,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.9,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.71,
-      "malnutritionDeaths": 919,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.75,
+      "malnutritionDeaths": 936,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "NAM",
@@ -2541,9 +2681,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.5,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 5.85,
-      "malnutritionDeaths": 148,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 6.64,
+      "malnutritionDeaths": 165,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "NRU",
@@ -2559,9 +2700,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.28,
+      "malnutritionDeathRate": 1.33,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "NPL",
@@ -2577,9 +2719,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.6,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.36,
-      "malnutritionDeaths": 708,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.47,
+      "malnutritionDeaths": 725,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "NLD",
@@ -2596,8 +2739,9 @@
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": 0.05,
-      "malnutritionDeaths": 8,
-      "mortalityYear": 2021
+      "malnutritionDeaths": 9,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "NCL",
@@ -2615,7 +2759,8 @@
       "undernourishedPeopleYear": 2023,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "NZL",
@@ -2631,9 +2776,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.28,
-      "malnutritionDeaths": 15,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.27,
+      "malnutritionDeaths": 14,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "NIC",
@@ -2649,9 +2795,10 @@
       "undernourishmentYear": 2022,
       "undernourishedMillions": 1.2,
       "undernourishedPeopleYear": 2022,
-      "malnutritionDeathRate": 0.89,
-      "malnutritionDeaths": 61,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.15,
+      "malnutritionDeaths": 78,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "NER",
@@ -2667,9 +2814,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 3.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 9.34,
-      "malnutritionDeaths": 2359,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 9.46,
+      "malnutritionDeaths": 2304,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "NGA",
@@ -2685,9 +2833,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 45.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.65,
-      "malnutritionDeaths": 3521,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.66,
+      "malnutritionDeaths": 3464,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "NIU",
@@ -2703,9 +2852,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 4.13,
+      "malnutritionDeathRate": 3.79,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PRK",
@@ -2721,9 +2871,10 @@
       "undernourishmentYear": 2018,
       "undernourishedMillions": 12.2,
       "undernourishedPeopleYear": 2018,
-      "malnutritionDeathRate": 1.29,
-      "malnutritionDeaths": 334,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.26,
+      "malnutritionDeaths": 326,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MKD",
@@ -2739,9 +2890,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2021,
-      "malnutritionDeathRate": 0.05,
-      "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.02,
+      "malnutritionDeaths": 0,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MNP",
@@ -2759,7 +2911,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "NOR",
@@ -2775,9 +2928,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 3.53,
-      "malnutritionDeaths": 191,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.5,
+      "malnutritionDeaths": 188,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "OMN",
@@ -2793,9 +2947,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.08,
+      "malnutritionDeathRate": 0.09,
       "malnutritionDeaths": 4,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PAK",
@@ -2811,9 +2966,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 40.9,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.07,
-      "malnutritionDeaths": 4780,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.16,
+      "malnutritionDeaths": 4892,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PLW",
@@ -2829,9 +2985,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.61,
+      "malnutritionDeathRate": 1.56,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PSE",
@@ -2849,7 +3006,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "PAN",
@@ -2865,9 +3023,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.14,
-      "malnutritionDeaths": 93,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.36,
+      "malnutritionDeaths": 101,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PNG",
@@ -2883,9 +3042,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.49,
-      "malnutritionDeaths": 149,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.46,
+      "malnutritionDeaths": 143,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PRY",
@@ -2901,9 +3061,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.79,
-      "malnutritionDeaths": 187,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.38,
+      "malnutritionDeaths": 223,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PER",
@@ -2919,9 +3080,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 3.91,
-      "malnutritionDeaths": 1317,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.22,
+      "malnutritionDeaths": 1403,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PHL",
@@ -2937,9 +3099,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 3.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 5.32,
-      "malnutritionDeaths": 6059,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.53,
+      "malnutritionDeaths": 5087,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "POL",
@@ -2955,9 +3118,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.49,
-      "malnutritionDeaths": 189,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.51,
+      "malnutritionDeaths": 197,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PRT",
@@ -2973,9 +3137,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.71,
-      "malnutritionDeaths": 73,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.7,
+      "malnutritionDeaths": 72,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "PRI",
@@ -2993,7 +3158,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "QAT",
@@ -3011,7 +3177,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": 0.04,
       "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "COG",
@@ -3027,9 +3194,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.6,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.98,
-      "malnutritionDeaths": 174,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.32,
+      "malnutritionDeaths": 189,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "REU",
@@ -3047,7 +3215,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "ROU",
@@ -3063,9 +3232,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.56,
-      "malnutritionDeaths": 108,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.55,
+      "malnutritionDeaths": 106,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "RUS",
@@ -3082,8 +3252,9 @@
       "undernourishedMillions": 4,
       "undernourishedPeopleYear": 2003,
       "malnutritionDeathRate": 0.22,
-      "malnutritionDeaths": 312,
-      "mortalityYear": 2021
+      "malnutritionDeaths": 314,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "RWA",
@@ -3099,9 +3270,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 3.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 7.58,
-      "malnutritionDeaths": 1020,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 7.97,
+      "malnutritionDeaths": 1047,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SHN",
@@ -3119,7 +3291,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "KNA",
@@ -3135,9 +3308,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 7.31,
-      "malnutritionDeaths": 3,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 7.58,
+      "malnutritionDeaths": 4,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LCA",
@@ -3153,9 +3327,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 2.41,
-      "malnutritionDeaths": 4,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.6,
+      "malnutritionDeaths": 5,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "MAF",
@@ -3173,7 +3348,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "SPM",
@@ -3191,7 +3367,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "VCT",
@@ -3207,9 +3384,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.38,
-      "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.76,
+      "malnutritionDeaths": 3,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "WSM",
@@ -3225,9 +3403,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.44,
+      "malnutritionDeathRate": 1.48,
       "malnutritionDeaths": 3,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SMR",
@@ -3243,9 +3422,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.21,
+      "malnutritionDeathRate": 0.23,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "STP",
@@ -3261,9 +3441,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.59,
+      "malnutritionDeathRate": 2.79,
       "malnutritionDeaths": 6,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SAU",
@@ -3279,9 +3460,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.8,
       "undernourishedPeopleYear": 2014,
-      "malnutritionDeathRate": 0.18,
-      "malnutritionDeaths": 57,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.19,
+      "malnutritionDeaths": 58,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SEN",
@@ -3297,9 +3479,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.9,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.94,
-      "malnutritionDeaths": 327,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.16,
+      "malnutritionDeaths": 354,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SRB",
@@ -3315,9 +3498,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.2,
       "undernourishedPeopleYear": 2005,
-      "malnutritionDeathRate": 0.05,
-      "malnutritionDeaths": 4,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.09,
+      "malnutritionDeaths": 7,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SYC",
@@ -3333,9 +3517,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2019,
-      "malnutritionDeathRate": 1.91,
+      "malnutritionDeathRate": 1.9,
       "malnutritionDeaths": 2,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SLE",
@@ -3351,9 +3536,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 23.41,
-      "malnutritionDeaths": 1971,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 24.69,
+      "malnutritionDeaths": 2030,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SGP",
@@ -3369,9 +3555,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.02,
-      "malnutritionDeaths": 1,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.01,
+      "malnutritionDeaths": 0,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SXM",
@@ -3389,7 +3576,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "SVK",
@@ -3405,9 +3593,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.22,
-      "malnutritionDeaths": 12,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.19,
+      "malnutritionDeaths": 11,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SVN",
@@ -3423,9 +3612,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.01,
+      "malnutritionDeathRate": 0.02,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SLB",
@@ -3441,9 +3631,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.63,
+      "malnutritionDeathRate": 1.68,
       "malnutritionDeaths": 12,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SOM",
@@ -3459,9 +3650,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 9.8,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 30.64,
-      "malnutritionDeaths": 5229,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 31.24,
+      "malnutritionDeaths": 5161,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ZAF",
@@ -3477,9 +3669,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 6.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 4.23,
-      "malnutritionDeaths": 2514,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.4,
+      "malnutritionDeaths": 2587,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "KOR",
@@ -3495,9 +3688,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.2,
       "undernourishedPeopleYear": 2004,
-      "malnutritionDeathRate": 0.19,
-      "malnutritionDeaths": 101,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.2,
+      "malnutritionDeaths": 106,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SSD",
@@ -3513,9 +3707,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.6,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 20.71,
-      "malnutritionDeaths": 2226,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 20.77,
+      "malnutritionDeaths": 2202,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ESP",
@@ -3531,9 +3726,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.87,
-      "malnutritionDeaths": 414,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.83,
+      "malnutritionDeaths": 394,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "LKA",
@@ -3549,9 +3745,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.7,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.74,
-      "malnutritionDeaths": 161,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.7,
+      "malnutritionDeaths": 152,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SDN",
@@ -3567,9 +3764,10 @@
       "undernourishmentYear": 2021,
       "undernourishedMillions": 5.3,
       "undernourishedPeopleYear": 2021,
-      "malnutritionDeathRate": 3.01,
-      "malnutritionDeaths": 1372,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 3.35,
+      "malnutritionDeaths": 1483,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SUR",
@@ -3585,9 +3783,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 1.28,
+      "malnutritionDeathRate": 1.38,
       "malnutritionDeaths": 8,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SWE",
@@ -3603,9 +3802,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.46,
-      "malnutritionDeaths": 153,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.25,
+      "malnutritionDeaths": 130,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "CHE",
@@ -3621,9 +3821,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.97,
-      "malnutritionDeaths": 85,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.93,
+      "malnutritionDeaths": 81,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "SYR",
@@ -3640,8 +3841,9 @@
       "undernourishedMillions": 9.2,
       "undernourishedPeopleYear": 2023,
       "malnutritionDeathRate": 0.51,
-      "malnutritionDeaths": 109,
-      "mortalityYear": 2021
+      "malnutritionDeaths": 107,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TJK",
@@ -3657,9 +3859,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.9,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.19,
-      "malnutritionDeaths": 18,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.18,
+      "malnutritionDeaths": 17,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TZA",
@@ -3675,9 +3878,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 13.4,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 5.74,
-      "malnutritionDeaths": 3653,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 6.18,
+      "malnutritionDeaths": 3812,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "THA",
@@ -3693,9 +3897,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 3.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.12,
-      "malnutritionDeaths": 1521,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.08,
+      "malnutritionDeaths": 1486,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TLS",
@@ -3711,9 +3916,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 9.19,
-      "malnutritionDeaths": 121,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 8.08,
+      "malnutritionDeaths": 105,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TGO",
@@ -3729,9 +3935,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.8,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.69,
-      "malnutritionDeaths": 233,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.88,
+      "malnutritionDeaths": 243,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TKL",
@@ -3749,7 +3956,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "TON",
@@ -3765,9 +3973,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 2.91,
+      "malnutritionDeathRate": 2.78,
       "malnutritionDeaths": 3,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TTO",
@@ -3783,9 +3992,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.97,
-      "malnutritionDeaths": 15,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.95,
+      "malnutritionDeaths": 14,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TUN",
@@ -3803,7 +4013,8 @@
       "undernourishedPeopleYear": 2023,
       "malnutritionDeathRate": 0.18,
       "malnutritionDeaths": 22,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TUR",
@@ -3819,9 +4030,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 2.3,
       "undernourishedPeopleYear": 2008,
-      "malnutritionDeathRate": 0.77,
-      "malnutritionDeaths": 649,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.79,
+      "malnutritionDeaths": 667,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TKM",
@@ -3837,9 +4049,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.19,
-      "malnutritionDeaths": 12,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.22,
+      "malnutritionDeaths": 14,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "TCA",
@@ -3857,7 +4070,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "TUV",
@@ -3873,9 +4087,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 1.79,
+      "malnutritionDeathRate": 1.93,
       "malnutritionDeaths": 0,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "UGA",
@@ -3891,9 +4106,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 10.7,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 6.71,
-      "malnutritionDeaths": 3077,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 6.86,
+      "malnutritionDeaths": 3042,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "UKR",
@@ -3910,8 +4126,9 @@
       "undernourishedMillions": 2.7,
       "undernourishedPeopleYear": 2023,
       "malnutritionDeathRate": 0.08,
-      "malnutritionDeaths": 34,
-      "mortalityYear": 2021
+      "malnutritionDeaths": 36,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ARE",
@@ -3929,7 +4146,8 @@
       "undernourishedPeopleYear": 2020,
       "malnutritionDeathRate": 0.05,
       "malnutritionDeaths": 5,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "GBR",
@@ -3945,9 +4163,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 0.15,
-      "malnutritionDeaths": 103,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.14,
+      "malnutritionDeaths": 93,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "USA",
@@ -3963,9 +4182,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 5.2,
-      "malnutritionDeaths": 17516,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 4.36,
+      "malnutritionDeaths": 14630,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "VIR",
@@ -3983,7 +4203,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "URY",
@@ -3999,9 +4220,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2004,
-      "malnutritionDeathRate": 2.05,
-      "malnutritionDeaths": 70,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 1.99,
+      "malnutritionDeaths": 68,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "UZB",
@@ -4018,8 +4240,9 @@
       "undernourishedMillions": 0.8,
       "undernourishedPeopleYear": 2011,
       "malnutritionDeathRate": 0.05,
-      "malnutritionDeaths": 17,
-      "mortalityYear": 2021
+      "malnutritionDeaths": 18,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "VUT",
@@ -4035,9 +4258,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 0.1,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.78,
+      "malnutritionDeathRate": 2.84,
       "malnutritionDeaths": 9,
-      "mortalityYear": 2021
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "VAT",
@@ -4055,7 +4279,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "VEN",
@@ -4071,9 +4296,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 1.7,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 2.34,
-      "malnutritionDeaths": 659,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 2.29,
+      "malnutritionDeaths": 653,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "VNM",
@@ -4089,9 +4315,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 5.3,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 0.29,
-      "malnutritionDeaths": 281,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 0.28,
+      "malnutritionDeaths": 273,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "WLF",
@@ -4109,7 +4336,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "ESH",
@@ -4127,7 +4355,8 @@
       "undernourishedPeopleYear": null,
       "malnutritionDeathRate": null,
       "malnutritionDeaths": null,
-      "mortalityYear": null
+      "mortalityPeriod": null,
+      "mortalityObservations": null
     },
     {
       "code": "YEM",
@@ -4143,9 +4372,10 @@
       "undernourishmentYear": null,
       "undernourishedMillions": null,
       "undernourishedPeopleYear": null,
-      "malnutritionDeathRate": 5.71,
-      "malnutritionDeaths": 1883,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 5.57,
+      "malnutritionDeaths": 1796,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ZMB",
@@ -4161,9 +4391,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 7.7,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 6.93,
-      "malnutritionDeaths": 1350,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 7.29,
+      "malnutritionDeaths": 1379,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     },
     {
       "code": "ZWE",
@@ -4179,9 +4410,10 @@
       "undernourishmentYear": 2023,
       "undernourishedMillions": 3.2,
       "undernourishedPeopleYear": 2023,
-      "malnutritionDeathRate": 16.73,
-      "malnutritionDeaths": 2676,
-      "mortalityYear": 2021
+      "malnutritionDeathRate": 17.05,
+      "malnutritionDeaths": 2672,
+      "mortalityPeriod": "2019–2021",
+      "mortalityObservations": 3
     }
   ]
 }
