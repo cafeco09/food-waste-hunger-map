@@ -171,29 +171,23 @@ app.innerHTML = `
       <div class="section-heading light-heading">
         <div>
           <span class="section-index">02 / Relationship</span>
-          <h2 id="relationship-title">Does more waste mean more hunger?</h2>
+          <h2 id="relationship-title">The same system, different outcomes</h2>
         </div>
-        <p>No simple rule emerges. Explore the distribution; proximity is descriptive, not proof of cause.</p>
+        <p>Countries fall into four broad groups. This makes the pattern visible without suggesting that one indicator directly causes another.</p>
       </div>
       <div class="chart-card">
         <div class="chart-toolbar">
           <div>
-            <p class="chart-kicker">Household food waste vs.</p>
+            <p class="chart-kicker">Compare household food waste with</p>
             <div class="segmented-control dark-control" id="hunger-metric-control" aria-label="Hunger measure for scatter chart">
               <button type="button" data-hunger-metric="undernourishedPct" class="active" aria-pressed="true">Undernourishment</button>
               <button type="button" data-hunger-metric="malnutritionDeathRate" aria-pressed="false">Malnutrition deaths</button>
             </div>
           </div>
-          <div class="chart-key">
-            <span><i class="dot dot-country"></i> Country</span>
-            <span><i class="dot dot-selected"></i> Selected</span>
-          </div>
+          <p class="relationship-basis">“Higher” and “lower” mean above or below the median country.</p>
         </div>
-        <div class="scatter-wrap">
-          <svg id="scatter-chart" role="img" aria-label="Scatter plot comparing household food waste and hunger by country"></svg>
-          <div class="tooltip dark-tooltip" id="scatter-tooltip" role="status"></div>
-        </div>
-        <p class="chart-note" id="chart-note">Each dot is a country. Axes use per-person or population-normalised values to avoid population size dominating the comparison.</p>
+        <div class="relationship-grid" id="relationship-grid" aria-live="polite"></div>
+        <div class="relationship-takeaway" id="relationship-takeaway"></div>
       </div>
     </section>
 
@@ -304,7 +298,6 @@ app.innerHTML = `
 `;
 
 const mapTooltip = document.querySelector('#map-tooltip');
-const scatterTooltip = document.querySelector('#scatter-tooltip');
 
 renderMap();
 renderScatter();
@@ -558,66 +551,20 @@ function renderScatter() {
   const metricKey = state.hungerMetric;
   const metric = metrics[metricKey];
   const plotData = countries.filter((country) => Number.isFinite(country.foodWasteKg) && Number.isFinite(country[metricKey]));
-  const svg = select('#scatter-chart');
-  const width = 1040;
-  const height = 545;
-  const margin = { top: 28, right: 30, bottom: 70, left: 80 };
-  const values = plotData.map((country) => country[metricKey]).sort((a, b) => a - b);
-  const yMax = (quantile(values, 0.985) ?? Math.max(...values)) * 1.08;
-  const x = scaleLinear().domain([0, Math.max(...plotData.map((country) => country.foodWasteKg)) * 1.06]).range([margin.left, width - margin.right]).nice();
-  const y = scaleLinear().domain([0, yMax]).range([height - margin.bottom, margin.top]).nice();
-  const xMedian = median(plotData, (country) => country.foodWasteKg);
-  const yMedian = median(plotData, (country) => country[metricKey]);
-
-  svg.attr('viewBox', `0 0 ${width} ${height}`).selectAll('*').remove();
-
-  svg.append('g').attr('class', 'grid-lines')
-    .attr('transform', `translate(0,${height - margin.bottom})`)
-    .call(axisBottom(x).ticks(7).tickSize(-(height - margin.top - margin.bottom)).tickFormat(''));
-  svg.append('g').attr('class', 'grid-lines')
-    .attr('transform', `translate(${margin.left},0)`)
-    .call(axisLeft(y).ticks(6).tickSize(-(width - margin.left - margin.right)).tickFormat(''));
-
-  svg.append('line').attr('class', 'median-line').attr('x1', x(xMedian)).attr('x2', x(xMedian)).attr('y1', margin.top).attr('y2', height - margin.bottom);
-  svg.append('line').attr('class', 'median-line').attr('x1', margin.left).attr('x2', width - margin.right).attr('y1', y(yMedian)).attr('y2', y(yMedian));
-
-  svg.append('text').attr('class', 'quadrant-label').attr('x', width - margin.right - 8).attr('y', margin.top + 18).attr('text-anchor', 'end').text('HIGHER WASTE · HIGHER HUNGER');
-  svg.append('text').attr('class', 'quadrant-label').attr('x', margin.left + 8).attr('y', height - margin.bottom - 10).text('LOWER WASTE · LOWER HUNGER');
-
-  svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${height - margin.bottom})`).call(axisBottom(x).ticks(7).tickFormat((value) => `${value}`));
-  svg.append('g').attr('class', 'axis').attr('transform', `translate(${margin.left},0)`).call(axisLeft(y).ticks(6));
-
-  svg.append('text').attr('class', 'axis-title').attr('x', (margin.left + width - margin.right) / 2).attr('y', height - 18).attr('text-anchor', 'middle').text('HOUSEHOLD FOOD WASTE · KG PER PERSON / YEAR');
-  svg.append('text').attr('class', 'axis-title').attr('transform', 'rotate(-90)').attr('x', -(margin.top + height - margin.bottom) / 2).attr('y', 20).attr('text-anchor', 'middle').text(metric.unit.toUpperCase());
-
-  const dots = svg.append('g').selectAll('circle').data(plotData).join('circle')
-    .attr('class', (country) => `scatter-dot ${country.code === state.selectedCode ? 'selected' : ''}`)
-    .attr('cx', (country) => x(country.foodWasteKg))
-    .attr('cy', (country) => y(Math.min(country[metricKey], yMax)))
-    .attr('r', (country) => country.code === state.selectedCode ? 8 : 5)
-    .attr('tabindex', 0)
-    .attr('role', 'button')
-    .attr('aria-label', (country) => `${country.name}: ${oneDecimal.format(country.foodWasteKg)} kg food waste; ${metric.formatter(country[metricKey])}`);
-
-  dots
-    .on('mouseenter focus', (event, country) => {
-      scatterTooltip.innerHTML = `<strong>${country.name}</strong><span>${oneDecimal.format(country.foodWasteKg)} kg household waste</span><span>${metric.formatter(country[metricKey])} ${metricKey === 'undernourishedPct' ? 'undernourished' : 'malnutrition deaths'}</span>`;
-      scatterTooltip.classList.add('visible');
-      positionTooltip(scatterTooltip, event);
-    })
-    .on('mousemove', (event) => positionTooltip(scatterTooltip, event))
-    .on('mouseleave blur', () => hideTooltip(scatterTooltip))
-    .on('click', (_, country) => selectCountry(country.code))
-    .on('keydown', (event, country) => {
-      if (!['Enter', ' '].includes(event.key)) return;
-      event.preventDefault();
-      selectCountry(country.code);
-    });
-
-  const note = metricKey === 'undernourishedPct'
-    ? 'Undernourishment is an FAO modelled estimate of insufficient habitual calorie intake—not a measure of diet quality.'
-    : `The mortality view covers the ${data.sources.mortality.period} annual average of WHO-estimated deaths assigned to protein–energy malnutrition, not all deaths to which food insecurity contributed.`;
-  document.querySelector('#chart-note').textContent = `${plotData.length} countries shown. ${note}`;
+  const wasteMiddle = median(plotData, (country) => country.foodWasteKg);
+  const hungerMiddle = median(plotData, (country) => country[metricKey]);
+  const groups = [
+    { key: 'high-high', title: 'More waste, more hardship', description: 'Both measures are above the typical country.', test: (c) => c.foodWasteKg >= wasteMiddle && c[metricKey] >= hungerMiddle },
+    { key: 'low-high', title: 'Less waste, more hardship', description: 'Lower household waste does not protect people from hunger.', test: (c) => c.foodWasteKg < wasteMiddle && c[metricKey] >= hungerMiddle },
+    { key: 'high-low', title: 'More waste, less hardship', description: 'Food access can remain stronger even where households discard more.', test: (c) => c.foodWasteKg >= wasteMiddle && c[metricKey] < hungerMiddle },
+    { key: 'low-low', title: 'Less waste, less hardship', description: 'Both measures are below the typical country.', test: (c) => c.foodWasteKg < wasteMiddle && c[metricKey] < hungerMiddle }
+  ];
+  document.querySelector('#relationship-grid').innerHTML = groups.map((group) => {
+    const members = plotData.filter(group.test).sort((a, b) => b[metricKey] - a[metricKey]);
+    return `<article class="relationship-group ${group.key}"><span>${members.length} countries</span><h3>${group.title}</h3><p>${group.description}</p><div>${members.slice(0, 5).map((country) => `<button type="button" data-relationship-country="${country.code}">${country.name}</button>`).join('')}</div></article>`;
+  }).join('');
+  document.querySelector('#relationship-takeaway').innerHTML = `<strong>The simple takeaway</strong><p>Countries appear in every group. Food waste alone does not predict hunger: access, affordability, infrastructure and stability help explain why similar levels of waste can coexist with very different human outcomes.</p><small>${plotData.length} countries compared · dividing lines: ${oneDecimal.format(wasteMiddle)} kg waste and ${metric.formatter(hungerMiddle)} ${metricKey === 'undernourishedPct' ? 'undernourished' : 'mortality'}.</small>`;
+  document.querySelectorAll('[data-relationship-country]').forEach((button) => button.addEventListener('click', () => { activateTab('map'); selectCountry(button.dataset.relationshipCountry); }));
 }
 
 function renderTable() {
