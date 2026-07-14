@@ -67,8 +67,8 @@ const state = {
 const app = document.querySelector('#app');
 app.innerHTML = `
   <header class="site-header">
-    <button class="brand" type="button" data-tab="overview" aria-label="Waste / Want home">
-      <span>WASTE</span><i aria-hidden="true"></i><span>WANT</span>
+    <button class="brand" type="button" data-tab="overview" aria-label="Enough for whom home">
+      <span>ENOUGH</span><i aria-hidden="true"></i><span>FOR WHOM?</span>
     </button>
     <nav class="dashboard-tabs" aria-label="Dashboard sections" role="tablist">
       ${[['overview','Overview'],['map','Map'],['relationship','Relationship'],['regions','Regions'],['countries','Countries'],['method','Method']].map(([key,label]) => `<button type="button" role="tab" data-tab="${key}" aria-selected="${key === state.activeTab}" class="${key === state.activeTab ? 'active' : ''}">${label}</button>`).join('')}
@@ -78,34 +78,37 @@ app.innerHTML = `
   <main id="top">
     <div class="tab-panel" data-panel="overview" ${state.activeTab === 'overview' ? '' : 'hidden'}>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="eyebrow"><span>Global food systems</span><span>Country comparison</span></div>
+      <div class="eyebrow"><span>A human view of the global food gap</span><span>Country by country</span></div>
       <div class="hero-grid">
         <div>
-          <h1 id="hero-title">Food wasted.<br><em>Hunger endured.</em></h1>
-          <p class="hero-intro">A country-by-country view of what households discard and how many people still do not get enough to eat.</p>
-          <button class="primary-link" type="button" data-tab="map">Enter the data <span aria-hidden="true">→</span></button>
+          <h1 id="hero-title">What we throw away.<br><em>Who goes without.</em></h1>
+          <p class="hero-intro">The world produces food in abundance. Yet whether someone eats still depends on where they live, what they can afford and whether the system can reach them.</p>
+          <button class="primary-link" type="button" data-tab="map">See where the gap appears <span aria-hidden="true">→</span></button>
         </div>
         <div class="hero-facts" aria-label="Global headline figures">
           <div class="hero-fact hero-fact-waste">
+            <span class="fact-chapter">What is discarded</span>
             <span class="fact-number">${oneDecimal.format(data.global.foodWasteKg)}</span>
             <span class="fact-unit">kg</span>
-            <p>household food waste per person in 2022</p>
+            <p>Across the world, households discarded an estimated <strong>${oneDecimal.format(data.global.foodWasteKg)} kg per person</strong> in the 2022 UNEP benchmark.</p>
           </div>
+          <p class="fact-bridge">At the same time—</p>
           <div class="hero-fact hero-fact-hunger">
+            <span class="fact-chapter">Who still goes without</span>
             <span class="fact-number">${data.global.undernourishedMillions ? oneDecimal.format(data.global.undernourishedMillions) : '—'}</span>
             <span class="fact-unit">million</span>
-            <p>people undernourished in ${data.sources.undernourishment.year}</p>
+            <p><strong>${data.global.undernourishedMillions ? oneDecimal.format(data.global.undernourishedMillions) : '—'} million people</strong> were estimated to live without enough habitual food intake in the latest FAO estimate.</p>
           </div>
         </div>
       </div>
       <div class="hero-note">
         <span aria-hidden="true">↳</span>
-        <p><strong>Read this as contrast, not causation.</strong> Food waste in one country does not directly cause hunger in another—and not all measured food waste is edible.</p>
+        <p><strong>This is not simply a story of shortage.</strong> It is a story of access: food may exist while poverty, prices, conflict, weak infrastructure and unequal distribution keep it out of reach. The two figures describe the same global system, not a direct transfer from waste to hunger.</p>
       </div>
     </section>
 
     <section class="statement" aria-label="Framing statement">
-      <p>The same food system can produce <span>surplus</span> and <span>scarcity</span>. The question is not only how much exists, but who can access it.</p>
+      <p>There can be <span>enough food</span> in the system and still not be <span>enough access</span> for everyone. Hunger is shaped not only by supply, but by who can afford, reach and safely use that supply.</p>
     </section>
     <section class="period-strip" aria-label="Data periods">
       <article><span>Food waste</span><strong>2022 benchmark</strong><p>UNEP household estimate; not an annual series.</p></article>
@@ -294,7 +297,7 @@ app.innerHTML = `
   </main>
 
   <footer>
-    <button class="brand footer-brand" type="button" data-tab="overview"><span>WASTE</span><i></i><span>WANT</span></button>
+    <button class="brand footer-brand" type="button" data-tab="overview"><span>ENOUGH</span><i></i><span>FOR WHOM?</span></button>
     <p>An open, evidence-led data story. Built for GitHub Pages.</p>
     <button type="button" data-tab="overview">Overview ↑</button>
   </footer>
