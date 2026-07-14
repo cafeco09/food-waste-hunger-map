@@ -375,11 +375,29 @@ input:focus-visible,
 .statement span:last-child { color: #dc8b83; }
 
 .explore-section,
-.countries-section {
+.countries-section,
+.regions-section {
   max-width: 1320px;
   margin: 0 auto;
   padding: 7rem 1.5rem;
 }
+
+.regions-section { min-height: calc(100vh - 72px); }
+.region-insight-filter { min-width: 190px; }
+.region-intro { max-width: 760px; margin: -1.5rem 0 2rem; color: var(--ink-soft); }
+.region-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }
+.region-summary article { padding: 1.6rem; background: var(--white); }
+.region-summary span { display: block; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.region-summary strong { display: block; margin: .45rem 0; color: var(--red-deep); font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 400; }
+.region-summary p { margin: 0; color: var(--ink-soft); font-size: .78rem; }
+.region-ranking { margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--line); background: rgba(255,255,255,.28); }
+.region-country-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 1rem; background: var(--line); }
+.region-country-list button { display: grid; grid-template-columns: 2rem 1fr auto; gap: 1rem; align-items: center; padding: 1rem; border: 0; background: var(--paper); color: inherit; text-align: left; cursor: pointer; }
+.region-country-list button:hover { background: var(--white); }
+.region-country-list b { color: var(--orange); font-size: .72rem; }
+.region-country-list span { display: grid; }
+.region-country-list small { color: var(--ink-soft); }
+.region-country-list i { font-style: normal; font-size: .75rem; font-weight: 800; }
 
 .section-heading {
   display: grid;
@@ -1167,6 +1185,9 @@ footer > a:last-child { color: #c2c9c3; text-decoration: none; }
   .fact-number { font-size: 3.7rem; }
   .hero-note { grid-template-columns: auto 1fr; margin-top: 2.5rem; }
   .period-strip { grid-template-columns: 1fr; margin: 0 1rem 2rem; }
+  .region-summary, .region-country-list { grid-template-columns: 1fr; }
+  .region-country-list button { grid-template-columns: 1.6rem 1fr; }
+  .region-country-list button i { display: none; }
   .statement { padding-top: 5rem; padding-bottom: 5rem; }
   .section-heading { grid-template-columns: 1fr; gap: 1.2rem; }
   .map-toolbar,
