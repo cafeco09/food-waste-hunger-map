@@ -311,6 +311,25 @@ input:focus-visible,
   border-bottom: 1px solid var(--line);
 }
 
+.fact-chapter {
+  grid-column: 1 / -1;
+  margin-bottom: .55rem;
+  color: var(--ink);
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.fact-bridge {
+  margin: 0;
+  padding: .65rem 0 .2rem;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: .9rem;
+  font-style: italic;
+}
+
 .fact-number {
   font-family: var(--serif);
   font-size: clamp(3rem, 5vw, 5.2rem);
@@ -332,6 +351,8 @@ input:focus-visible,
   color: var(--ink-soft);
   font-size: .82rem;
 }
+
+.hero-fact p strong { color: var(--ink); font-weight: 700; }
 
 .hero-fact-waste .fact-number { color: var(--orange); }
 .hero-fact-hunger .fact-number { color: var(--red-deep); }
