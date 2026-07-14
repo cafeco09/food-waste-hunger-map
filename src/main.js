@@ -203,12 +203,16 @@ app.innerHTML = `
         <label class="filter-field region-insight-filter"><span>Region</span><select id="insight-region-select"><option>All</option>${[...new Set(countries.map((country) => country.region))].sort().map((region) => `<option>${region}</option>`).join('')}</select></label>
       </div>
       <p class="region-intro" id="region-intro"></p>
+      <div class="interpretation-callout">
+        <span>Scientific interpretation</span>
+        <p>The coexistence of food waste and severe food insecurity is consistent with structural inefficiency: food availability does not guarantee access. Affordability, distribution, storage, infrastructure, conflict and unequal purchasing power influence whether food reaches people who need it.</p>
+      </div>
       <div class="region-summary" id="region-summary"></div>
       <div class="region-ranking">
-        <div class="profile-label-row"><span>Countries with the strongest overlap</span><strong id="region-coverage"></strong></div>
+        <div class="profile-label-row"><span>Countries with the highest joint indicator ranking</span><strong id="region-coverage"></strong></div>
         <div id="region-country-list" class="region-country-list"></div>
       </div>
-      <p class="profile-caveat"><strong>How to read this:</strong> medians prevent very large countries from dominating. The overlap score is a descriptive rank based equally on household waste, undernourishment and malnutrition mortality; it is not a causal or severity index.</p>
+      <p class="profile-caveat"><strong>How to read this:</strong> medians prevent very large countries from dominating. The joint ranking identifies simultaneous elevation across the three indicators. It is descriptive—not a causal estimate, formal index or measure of how much wasted food could be redistributed.</p>
     </section>
 
     <section class="countries-section tab-panel" data-panel="countries" id="countries" aria-labelledby="countries-title" ${state.activeTab === 'countries' ? '' : 'hidden'}>
@@ -265,25 +269,25 @@ app.innerHTML = `
         <article>
           <span>01</span>
           <h3>Food waste</h3>
-          <p>UNEP’s 2022 household estimate in kilograms per person per year. It includes edible and inedible parts and contains modelled estimates where direct national measurement is unavailable.</p>
+          <p><strong>Measures:</strong> UNEP’s 2022 estimate of edible and inedible food discarded by households, in kilograms per person. <strong>May reflect:</strong> consumption practices, storage limitations, purchasing patterns and measurement methods. <strong>Does not measure:</strong> food that could necessarily be recovered or transferred to people experiencing hunger.</p>
           <a href="https://www.unep.org/resources/publication/food-waste-index-report-2024" target="_blank" rel="noreferrer">UNEP Food Waste Index 2024 ↗</a>
         </article>
         <article>
           <span>02</span>
           <h3>Undernourishment</h3>
-          <p>FAO’s estimated share of people whose habitual calorie intake is insufficient for a normal, active life. Values are three-year averages; very low estimates are reported at the 2.5% threshold.</p>
+          <p><strong>Measures:</strong> FAO’s modelled share of people whose habitual calorie intake is insufficient for a normal, active life, reported as rolling three-year averages. <strong>May reflect:</strong> affordability, access, income distribution and food-system resilience. <strong>Does not measure:</strong> short-term hunger, micronutrient deficiency or diet quality.</p>
           <a href="https://ourworldindata.org/grapher/prevalence-of-undernourishment" target="_blank" rel="noreferrer">FAO data via OWID ↗</a>
         </article>
         <article>
           <span>03</span>
           <h3>Malnutrition deaths</h3>
-          <p>WHO’s estimated deaths from protein–energy malnutrition—not every death in which hunger contributed. Rates shown are annual averages across ${data.sources.mortality.period}.</p>
+          <p><strong>Measures:</strong> WHO-estimated deaths assigned to protein–energy malnutrition, averaged annually across ${data.sources.mortality.period} and expressed per 100,000 people. <strong>May reflect:</strong> severe deprivation plus health-system vulnerability. <strong>Does not include:</strong> every death to which food insecurity contributed.</p>
           <a href="https://ourworldindata.org/grapher/death-rate-from-malnutrition-ghe" target="_blank" rel="noreferrer">WHO data via OWID ↗</a>
         </article>
         <article class="method-warning">
           <span>!</span>
-          <h3>What this cannot prove</h3>
-          <p>The indicators use different measurement systems. Their periods are displayed throughout; a correlation does not establish that domestic waste causes domestic hunger, nor that all discarded food could have been safely redistributed.</p>
+          <h3>Structural interpretation</h3>
+          <p>Simultaneously elevated indicators are consistent with an access, allocation and resilience problem rather than food availability alone. This is a hypothesis supported by the pattern—not proof that domestic waste causes hunger. Income, conflict, infrastructure, climate, governance and data quality may confound the relationship.</p>
         </article>
       </div>
     </section>
@@ -397,11 +401,11 @@ function renderRegionInsights() {
     overlap: country.foodWasteKg / Math.max(waste, 1) + country.undernourishedPct / Math.max(hunger, 1) + country.malnutritionDeathRate / Math.max(deaths, .1)
   })).sort((a, b) => b.overlap - a.overlap).slice(0, 8);
 
-  document.querySelector('#region-intro').textContent = `${state.insightRegion === 'All' ? 'All regions' : state.insightRegion} · ${subset.length} countries and territories in the UNEP benchmark. These are country medians, not population-weighted totals.`;
+  document.querySelector('#region-intro').textContent = `${state.insightRegion === 'All' ? 'All regions' : state.insightRegion} · ${subset.length} countries and territories in the UNEP benchmark. Country medians describe the typical observed country and are not population-weighted totals.`;
   document.querySelector('#region-summary').innerHTML = `
-    <article><span>Household food waste</span><strong>${Number.isFinite(waste) ? oneDecimal.format(waste) : '—'} kg</strong><p>median per person · UNEP 2022</p></article>
-    <article><span>Undernourishment</span><strong>${Number.isFinite(hunger) ? `${oneDecimal.format(hunger)}%` : '—'}</strong><p>median latest FAO rolling estimate</p></article>
-    <article><span>Malnutrition mortality</span><strong>${Number.isFinite(deaths) ? oneDecimal.format(deaths) : '—'} / 100k</strong><p>median annual rate · WHO ${data.sources.mortality.period}</p></article>`;
+    <article><span>Household discard</span><strong>${Number.isFinite(waste) ? oneDecimal.format(waste) : '—'} kg</strong><p>typical country’s annual waste per person · UNEP 2022</p></article>
+    <article><span>Chronic calorie insufficiency</span><strong>${Number.isFinite(hunger) ? `${oneDecimal.format(hunger)}%` : '—'}</strong><p>typical country’s affected population share · FAO rolling estimate</p></article>
+    <article><span>Severe health outcome</span><strong>${Number.isFinite(deaths) ? oneDecimal.format(deaths) : '—'} / 100k</strong><p>typical country’s annual mortality rate · WHO ${data.sources.mortality.period}</p></article>`;
   document.querySelector('#region-coverage').textContent = `${complete.length} with all three measures`;
   document.querySelector('#region-country-list').innerHTML = ranked.map((country, index) => `<button type="button" data-region-country="${country.code}"><b>${String(index + 1).padStart(2, '0')}</b><span><strong>${country.name}</strong><small>${oneDecimal.format(country.foodWasteKg)} kg waste · ${oneDecimal.format(country.undernourishedPct)}% undernourished · ${oneDecimal.format(country.malnutritionDeathRate)} deaths/100k</small></span><i>View →</i></button>`).join('') || '<p>No countries have all three measures.</p>';
   document.querySelectorAll('[data-region-country]').forEach((button) => button.addEventListener('click', () => {
@@ -609,7 +613,7 @@ function renderScatter() {
 
   const note = metricKey === 'undernourishedPct'
     ? 'Undernourishment is an FAO modelled estimate of insufficient habitual calorie intake—not a measure of diet quality.'
-    : 'The mortality view covers WHO-estimated deaths from protein–energy malnutrition, not all deaths to which hunger contributed.';
+    : `The mortality view covers the ${data.sources.mortality.period} annual average of WHO-estimated deaths assigned to protein–energy malnutrition, not all deaths to which food insecurity contributed.`;
   document.querySelector('#chart-note').textContent = `${plotData.length} countries shown. ${note}`;
 }
 
