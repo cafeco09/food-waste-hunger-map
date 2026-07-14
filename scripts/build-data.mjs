@@ -53,6 +53,33 @@ const latestByCode = (rows, maxYear = Infinity) => {
   return result;
 };
 
+const meanLatestYearsByCode = (rows, maxYear, yearCount = 3) => {
+  const valueColumn = numericColumn(rows);
+  const grouped = new Map();
+
+  for (const row of rows) {
+    if (!row.Code || !metadata.has(row.Code)) continue;
+    const year = Number(row.Year);
+    const value = Number(row[valueColumn]);
+    if (!Number.isFinite(value) || year > maxYear) continue;
+    if (!grouped.has(row.Code)) grouped.set(row.Code, []);
+    grouped.get(row.Code).push({ value, year });
+  }
+
+  const result = new Map();
+  for (const [code, observations] of grouped) {
+    const selected = observations.sort((a, b) => b.year - a.year).slice(0, yearCount);
+    if (!selected.length) continue;
+    result.set(code, {
+      value: selected.reduce((sum, item) => sum + item.value, 0) / selected.length,
+      startYear: Math.min(...selected.map((item) => item.year)),
+      endYear: Math.max(...selected.map((item) => item.year)),
+      observations: selected.length
+    });
+  }
+  return result;
+};
+
 const atYearByCode = (rows, year) => {
   const valueColumn = numericColumn(rows);
   const result = new Map();
@@ -77,8 +104,8 @@ for (const row of foodRows) {
 }
 
 const underLatest = latestByCode(underRows, 2024);
-const deathRateLatest = latestByCode(deathRateRows, 2021);
-const deathsLatest = latestByCode(deathsRows, 2021);
+const deathRateLatest = meanLatestYearsByCode(deathRateRows, 2021, 3);
+const deathsLatest = meanLatestYearsByCode(deathsRows, 2021, 3);
 const underPeopleLatest = latestByCode(peopleRows, 2024);
 
 const countries = [...food2022.entries()]
@@ -99,7 +126,8 @@ const countries = [...food2022.entries()]
       undernourishedPeopleYear: underPeople?.year ?? null,
       malnutritionDeathRate: deathRate ? round(deathRate.value, 2) : null,
       malnutritionDeaths: deaths ? Math.round(deaths.value) : null,
-      mortalityYear: deathRate?.year ?? deaths?.year ?? null
+      mortalityPeriod: deathRate ? `${deathRate.startYear}–${deathRate.endYear}` : null,
+      mortalityObservations: deathRate?.observations ?? null
     };
   })
   .sort((a, b) => a.name.localeCompare(b.name));
@@ -107,15 +135,15 @@ const countries = [...food2022.entries()]
 const worldFood = foodRows.find((row) => row.Entity === 'World' && Number(row.Year) === 2022);
 const worldUnder = latestWorld(underRows, 2024);
 const worldPeople = latestWorld(peopleRows, 2024);
-const worldDeathRate = latestWorld(deathRateRows, 2021);
-const worldDeaths = latestWorld(deathsRows, 2021);
+const worldDeathRate = meanLatestWorld(deathRateRows, 2021, 3);
+const worldDeaths = meanLatestWorld(deathsRows, 2021, 3);
 
 const output = {
   generatedAt: new Date().toISOString(),
   sources: {
     foodWaste: { producer: 'UNEP', year: 2022, accessedVia: 'Our World in Data' },
     undernourishment: { producer: 'FAO', year: worldUnder?.year ?? 2024, accessedVia: 'Our World in Data' },
-    mortality: { producer: 'WHO', year: worldDeathRate?.year ?? 2021, accessedVia: 'Our World in Data' }
+    mortality: { producer: 'WHO', period: worldDeathRate ? `${worldDeathRate.startYear}–${worldDeathRate.endYear}` : '2019–2021', aggregation: 'three-year annual average', accessedVia: 'Our World in Data' }
   },
   global: {
     foodWasteKg: worldFood ? round(Number(worldFood.Household), 1) : 79,
@@ -137,6 +165,21 @@ function latestWorld(rows, maxYear) {
     .filter((row) => row.Entity === 'World' && Number(row.Year) <= maxYear && Number.isFinite(Number(row[valueColumn])))
     .map((row) => ({ value: Number(row[valueColumn]), year: Number(row.Year) }))
     .sort((a, b) => b.year - a.year)[0];
+}
+
+function meanLatestWorld(rows, maxYear, yearCount) {
+  const valueColumn = numericColumn(rows);
+  const selected = rows
+    .filter((row) => row.Entity === 'World' && Number(row.Year) <= maxYear && Number.isFinite(Number(row[valueColumn])))
+    .map((row) => ({ value: Number(row[valueColumn]), year: Number(row.Year) }))
+    .sort((a, b) => b.year - a.year)
+    .slice(0, yearCount);
+  if (!selected.length) return null;
+  return {
+    value: selected.reduce((sum, item) => sum + item.value, 0) / selected.length,
+    startYear: Math.min(...selected.map((item) => item.year)),
+    endYear: Math.max(...selected.map((item) => item.year))
+  };
 }
 
 function round(value, digits) {
