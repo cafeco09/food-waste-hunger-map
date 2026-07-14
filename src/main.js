@@ -192,24 +192,27 @@ app.innerHTML = `
     </section>
 
     <section class="regions-section tab-panel" data-panel="regions" aria-labelledby="regions-title" ${state.activeTab === 'regions' ? '' : 'hidden'}>
-      <div class="section-heading">
-        <div>
+      <div class="region-header">
+        <div class="region-heading-copy">
           <span class="section-index">03 / Regions</span>
-          <h2 id="regions-title">Where waste and hunger overlap</h2>
+          <h2 id="regions-title">One food system.<br><em>Very different realities.</em></h2>
+          <p class="region-intro" id="region-intro"></p>
         </div>
-        <label class="filter-field region-insight-filter"><span>Region</span><select id="insight-region-select"><option>All</option>${[...new Set(countries.map((country) => country.region))].sort().map((region) => `<option>${region}</option>`).join('')}</select></label>
-      </div>
-      <p class="region-intro" id="region-intro"></p>
-      <div class="interpretation-callout">
-        <span>Scientific interpretation</span>
-        <p>The coexistence of food waste and severe food insecurity is consistent with structural inefficiency: food availability does not guarantee access. Affordability, distribution, storage, infrastructure, conflict and unequal purchasing power influence whether food reaches people who need it.</p>
+        <label class="region-insight-filter"><span>Explore a region</span><select id="insight-region-select"><option>All</option>${[...new Set(countries.map((country) => country.region))].sort().map((region) => `<option>${region}</option>`).join('')}</select></label>
       </div>
       <div class="region-summary" id="region-summary"></div>
-      <div class="region-ranking">
-        <div class="profile-label-row"><span>Countries with the highest joint indicator ranking</span><strong id="region-coverage"></strong></div>
-        <div id="region-country-list" class="region-country-list"></div>
+      <div class="region-layout">
+        <div class="region-ranking">
+          <div class="region-ranking-head"><div><span>Country view</span><h3>Where the combined signal is strongest</h3></div><strong id="region-coverage"></strong></div>
+          <div id="region-country-list" class="region-country-list"></div>
+        </div>
+        <aside class="region-context">
+          <span>What the pattern suggests</span>
+          <h3>Availability is not the same as access.</h3>
+          <p>Food waste can coexist with severe food insecurity when affordability, storage, transport, conflict and unequal purchasing power prevent food from reaching people who need it.</p>
+          <div><strong>Read with care</strong><p>Country medians prevent population size from dominating. The ranking is descriptive—not a causal estimate or a measure of recoverable food.</p></div>
+        </aside>
       </div>
-      <p class="profile-caveat"><strong>How to read this:</strong> medians prevent very large countries from dominating. The joint ranking identifies simultaneous elevation across the three indicators. It is descriptive—not a causal estimate, formal index or measure of how much wasted food could be redistributed.</p>
     </section>
 
     <section class="countries-section tab-panel" data-panel="countries" id="countries" aria-labelledby="countries-title" ${state.activeTab === 'countries' ? '' : 'hidden'}>
@@ -399,9 +402,9 @@ function renderRegionInsights() {
 
   document.querySelector('#region-intro').textContent = `${state.insightRegion === 'All' ? 'All regions' : state.insightRegion} · ${subset.length} countries and territories in the UNEP benchmark. Country medians describe the typical observed country and are not population-weighted totals.`;
   document.querySelector('#region-summary').innerHTML = `
-    <article><span>Household discard</span><strong>${Number.isFinite(waste) ? oneDecimal.format(waste) : '—'} kg</strong><p>typical country’s annual waste per person · UNEP 2022</p></article>
-    <article><span>Chronic calorie insufficiency</span><strong>${Number.isFinite(hunger) ? `${oneDecimal.format(hunger)}%` : '—'}</strong><p>typical country’s affected population share · FAO rolling estimate</p></article>
-    <article><span>Severe health outcome</span><strong>${Number.isFinite(deaths) ? oneDecimal.format(deaths) : '—'} / 100k</strong><p>typical country’s annual mortality rate · WHO ${data.sources.mortality.period}</p></article>`;
+    <article class="region-metric waste"><div><b>01</b><span>Household discard</span></div><strong>${Number.isFinite(waste) ? oneDecimal.format(waste) : '—'}<small>kg / person</small></strong><p>Median country · UNEP 2022</p></article>
+    <article class="region-metric hunger"><div><b>02</b><span>Chronic undernourishment</span></div><strong>${Number.isFinite(hunger) ? oneDecimal.format(hunger) : '—'}<small>% of people</small></strong><p>Median country · latest FAO rolling estimate</p></article>
+    <article class="region-metric mortality"><div><b>03</b><span>Malnutrition mortality</span></div><strong>${Number.isFinite(deaths) ? oneDecimal.format(deaths) : '—'}<small>deaths / 100k</small></strong><p>Median country · WHO ${data.sources.mortality.period}</p></article>`;
   document.querySelector('#region-coverage').textContent = `${complete.length} with all three measures`;
   document.querySelector('#region-country-list').innerHTML = ranked.map((country, index) => `<button type="button" data-region-country="${country.code}"><b>${String(index + 1).padStart(2, '0')}</b><span><strong>${country.name}</strong><small>${oneDecimal.format(country.foodWasteKg)} kg waste · ${oneDecimal.format(country.undernourishedPct)}% undernourished · ${oneDecimal.format(country.malnutritionDeathRate)} deaths/100k</small></span><i>View →</i></button>`).join('') || '<p>No countries have all three measures.</p>';
   document.querySelectorAll('[data-region-country]').forEach((button) => button.addEventListener('click', () => {
