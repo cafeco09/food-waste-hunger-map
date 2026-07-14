@@ -1,19 +1,53 @@
-# Waste / Want
+# Enough for Whom?
 
-An interactive, evidence-led GitHub Pages site comparing household food waste with undernourishment and protein–energy-malnutrition deaths by country.
+**Food waste, hunger and access — country by country.**
 
-The project deliberately avoids a literal “food waste divided by hunger” ratio. The units are not interchangeable, so the country profile instead uses a shared population base: annual tonnes of household food waste per 100 residents alongside undernourished people per 100 residents.
+[Open the live dashboard](https://cafeco09.github.io/food-waste-hunger-map/)
+
+An interactive, evidence-led dashboard exploring how household food waste can coexist with undernourishment and deaths from protein–energy malnutrition. The project treats that coexistence as a structural question about access, affordability, storage, distribution and resilience—not as evidence that household waste directly causes hunger.
+
+## What “food waste” means here
+
+The main map and country comparison use **UNEP's 2022 estimate of household food waste in kilograms per person per year**.
+
+Under the UN Food Waste Index definition, food waste is food and associated inedible parts removed from the human food supply chain. At household level, this can include:
+
+- edible food that was intended to be eaten but was discarded;
+- food that spoiled before it was eaten; and
+- associated inedible parts such as bones, rinds, peels, pits, stones and eggshells.
+
+It **does not** mean only edible meals that could have been donated. Packaging is excluded. It also does not cover crops left in fields, farm losses, or post-harvest and pre-retail supply-chain losses; those fall under the separate Food Loss Index.
+
+UNEP covers three consumer and retail sectors: **households, food service and retail**. The dashboard's principal map uses the household measure because it has the broadest country coverage. A selected country's profile also shows household, food-service and retail estimates separately.
+
+Many country values are modelled Level I estimates based on available studies and extrapolation. They provide a comparable snapshot of scale, but they should not be treated as precise annual measurements or used to track year-to-year change.
+
+## How to interpret the comparison
+
+The indicators are not divided into a literal “waste-to-hunger” ratio because their units and meanings are not interchangeable. The dashboard instead:
+
+- maps each indicator independently;
+- compares countries using a shared population basis;
+- shows whether countries fall above or below the median on waste and hunger measures; and
+- labels the observation periods and missing values explicitly.
+
+An overlap is descriptive. It is consistent with structural problems in food access and allocation, but it does not prove causation or show how much discarded food could have been safely redistributed.
 
 ## Data
 
-- Household food waste: UNEP Food Waste Index 2024, estimates for 2022.
-- Undernourishment: FAO SDG indicator 2.1.1, latest value through 2024.
-- Malnutrition mortality: WHO Global Health Estimates, latest comparable value for 2021.
-- Harmonised downloads and country codes: Our World in Data.
+- **Household food waste:** UNEP Food Waste Index Report 2024; 2022 benchmark, kg per person per year.
+- **Undernourishment:** FAO SDG indicator 2.1.1; latest estimate through 2024. FAO reports this indicator as a rolling three-year estimate.
+- **Malnutrition mortality:** WHO Global Health Estimates; annual average across 2019–2021, deaths per 100,000 people.
+- **Harmonised downloads and country codes:** Our World in Data.
 
-The table covers countries and territories where UNEP provides a 2022 estimate; missing hunger measures remain explicitly marked rather than imputed by this project.
+The prepared dataset is committed in `src/data/countries.json`, so the published dashboard makes no live data API calls. Missing hunger measures remain marked as unavailable rather than being imputed.
 
-The prepared dataset is committed in `src/data/countries.json`, so the published page does not make live API calls. Run `npm run data` to refresh it from the source downloads.
+### Primary references
+
+- [UNEP Food Waste Index definition and methodology](https://sdgs.unep.org/article/2a5-food-waste-index)
+- [UNEP Food Waste Index Report 2024 summary](https://www.unep.org/news-and-stories/press-release/world-squanders-over-1-billion-meals-day-un-report)
+- [FAO undernourishment data via Our World in Data](https://ourworldindata.org/grapher/prevalence-of-undernourishment)
+- [WHO malnutrition mortality data via Our World in Data](https://ourworldindata.org/grapher/death-rate-from-malnutrition-ghe)
 
 ## Run locally
 
@@ -22,21 +56,19 @@ npm install
 npm run dev
 ```
 
-Then open the local URL shown by Vite.
+Open the local URL displayed by Vite.
 
-## Validate and build
+## Refresh and validate the data
 
 ```bash
+npm run data
 npm run check
 ```
 
-The production site is written to `dist/`.
+`npm run data` downloads and prepares the source datasets. `npm run check` validates the country records and creates the production build in `dist/`.
 
-## Publish on GitHub Pages
+## GitHub Pages publishing
 
-1. Create a GitHub repository and add this project.
-2. Push it to the `main` branch.
-3. In the repository, open **Settings → Pages** and select **GitHub Actions** as the source.
-4. Run the **Deploy GitHub Pages** workflow, or push a new commit to `main`.
+The compiled static site is committed under `docs/`. Configure GitHub Pages to deploy from the `main` branch and the `/docs` folder:
 
-The Vite base path is relative, so the build works for both account-level and project-level GitHub Pages URLs.
+**Settings → Pages → Build and deployment → Deploy from a branch → main → /docs**
