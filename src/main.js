@@ -53,6 +53,7 @@ const medianUnder = median(countries.filter((country) => country.undernourishedP
 const medianDeaths = median(countries.filter((country) => country.malnutritionDeathRate !== null), (country) => country.malnutritionDeathRate);
 
 const state = {
+  activeTab: ['overview', 'map', 'relationship', 'countries', 'method'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'overview',
   mapMetric: 'undernourishedPct',
   hungerMetric: 'undernourishedPct',
   selectedCode: null,
@@ -65,24 +66,23 @@ const state = {
 const app = document.querySelector('#app');
 app.innerHTML = `
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Waste / Want home">
+    <button class="brand" type="button" data-tab="overview" aria-label="Waste / Want home">
       <span>WASTE</span><i aria-hidden="true"></i><span>WANT</span>
-    </a>
-    <nav aria-label="Primary navigation">
-      <a href="#explore">Explore</a>
-      <a href="#countries">Countries</a>
-      <a href="#method">Method</a>
+    </button>
+    <nav class="dashboard-tabs" aria-label="Dashboard sections" role="tablist">
+      ${[['overview','Overview'],['map','Map'],['relationship','Relationship'],['countries','Countries'],['method','Method']].map(([key,label]) => `<button type="button" role="tab" data-tab="${key}" aria-selected="${key === state.activeTab}" class="${key === state.activeTab ? 'active' : ''}">${label}</button>`).join('')}
     </nav>
   </header>
 
   <main id="top">
+    <div class="tab-panel" data-panel="overview" ${state.activeTab === 'overview' ? '' : 'hidden'}>
     <section class="hero" aria-labelledby="hero-title">
       <div class="eyebrow"><span>Global food systems</span><span>Country comparison</span></div>
       <div class="hero-grid">
         <div>
           <h1 id="hero-title">Food wasted.<br><em>Hunger endured.</em></h1>
           <p class="hero-intro">A country-by-country view of what households discard and how many people still do not get enough to eat.</p>
-          <a class="primary-link" href="#explore">Enter the data <span aria-hidden="true">↓</span></a>
+          <button class="primary-link" type="button" data-tab="map">Enter the data <span aria-hidden="true">→</span></button>
         </div>
         <div class="hero-facts" aria-label="Global headline figures">
           <div class="hero-fact hero-fact-waste">
@@ -106,8 +106,14 @@ app.innerHTML = `
     <section class="statement" aria-label="Framing statement">
       <p>The same food system can produce <span>surplus</span> and <span>scarcity</span>. The question is not only how much exists, but who can access it.</p>
     </section>
+    <section class="period-strip" aria-label="Data periods">
+      <article><span>Food waste</span><strong>2022 benchmark</strong><p>UNEP household estimate; not an annual series.</p></article>
+      <article><span>Undernourishment</span><strong>Latest FAO estimate</strong><p>Published as a rolling three-year average.</p></article>
+      <article><span>Mortality</span><strong>${data.sources.mortality.period} average</strong><p>Mean of the latest three WHO annual estimates.</p></article>
+    </section>
+    </div>
 
-    <section class="explore-section" id="explore" aria-labelledby="explore-title">
+    <section class="explore-section tab-panel" data-panel="map" id="map" aria-labelledby="explore-title" ${state.activeTab === 'map' ? '' : 'hidden'}>
       <div class="section-heading">
         <div>
           <span class="section-index">01 / Explore</span>
@@ -143,7 +149,7 @@ app.innerHTML = `
         <div class="map-footer">
           <span><i class="dot dot-data"></i> Data available</span>
           <span><i class="dot dot-missing"></i> No matching data</span>
-          <span class="map-source">UNEP 2022 · FAO ${data.sources.undernourishment.year} · WHO ${data.sources.mortality.year}</span>
+          <span class="map-source">UNEP 2022 · FAO rolling 3-year · WHO ${data.sources.mortality.period} avg</span>
         </div>
       </div>
 
@@ -157,7 +163,7 @@ app.innerHTML = `
       </article>
     </section>
 
-    <section class="relationship-section" aria-labelledby="relationship-title">
+    <section class="relationship-section tab-panel" data-panel="relationship" aria-labelledby="relationship-title" ${state.activeTab === 'relationship' ? '' : 'hidden'}>
       <div class="section-heading light-heading">
         <div>
           <span class="section-index">02 / Relationship</span>
@@ -187,7 +193,7 @@ app.innerHTML = `
       </div>
     </section>
 
-    <section class="countries-section" id="countries" aria-labelledby="countries-title">
+    <section class="countries-section tab-panel" data-panel="countries" id="countries" aria-labelledby="countries-title" ${state.activeTab === 'countries' ? '' : 'hidden'}>
       <div class="section-heading">
         <div>
           <span class="section-index">03 / Countries</span>
@@ -219,7 +225,7 @@ app.innerHTML = `
               <th><button type="button" data-sort="name">Country <span>↕</span></button></th>
               <th><button type="button" data-sort="foodWasteKg">Household waste <small>kg / person / yr</small> <span>↕</span></button></th>
               <th><button type="button" data-sort="undernourishedPct">Undernourished <small>% of population</small> <span>↕</span></button></th>
-              <th><button type="button" data-sort="malnutritionDeathRate">Malnutrition deaths <small>per 100,000</small> <span>↕</span></button></th>
+              <th><button type="button" data-sort="malnutritionDeathRate">Malnutrition deaths <small>per 100,000 · 3-year avg</small> <span>↕</span></button></th>
               <th>Pattern</th>
             </tr>
           </thead>
@@ -229,7 +235,7 @@ app.innerHTML = `
       </div>
     </section>
 
-    <section class="method-section" id="method" aria-labelledby="method-title">
+    <section class="method-section tab-panel" data-panel="method" id="method" aria-labelledby="method-title" ${state.activeTab === 'method' ? '' : 'hidden'}>
       <div class="section-heading light-heading">
         <div>
           <span class="section-index">04 / Method</span>
@@ -253,22 +259,22 @@ app.innerHTML = `
         <article>
           <span>03</span>
           <h3>Malnutrition deaths</h3>
-          <p>WHO’s estimated deaths from protein–energy malnutrition—not every death in which hunger contributed. The rate is per 100,000 people and the latest comparable year is 2021.</p>
+          <p>WHO’s estimated deaths from protein–energy malnutrition—not every death in which hunger contributed. Rates shown are annual averages across ${data.sources.mortality.period}.</p>
           <a href="https://ourworldindata.org/grapher/death-rate-from-malnutrition-ghe" target="_blank" rel="noreferrer">WHO data via OWID ↗</a>
         </article>
         <article class="method-warning">
           <span>!</span>
           <h3>What this cannot prove</h3>
-          <p>The indicators come from different years and measurement systems. A correlation does not establish that domestic waste causes domestic hunger, nor that all discarded food could have been safely redistributed.</p>
+          <p>The indicators use different measurement systems. Their periods are displayed throughout; a correlation does not establish that domestic waste causes domestic hunger, nor that all discarded food could have been safely redistributed.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <a class="brand footer-brand" href="#top"><span>WASTE</span><i></i><span>WANT</span></a>
+    <button class="brand footer-brand" type="button" data-tab="overview"><span>WASTE</span><i></i><span>WANT</span></button>
     <p>An open, evidence-led data story. Built for GitHub Pages.</p>
-    <a href="#top">Back to top ↑</a>
+    <button type="button" data-tab="overview">Overview ↑</button>
   </footer>
 `;
 
@@ -281,6 +287,11 @@ renderTable();
 bindEvents();
 
 function bindEvents() {
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-tab]');
+    if (button) activateTab(button.dataset.tab);
+  });
+  window.addEventListener('hashchange', () => activateTab(location.hash.slice(1), false));
   document.querySelector('#map-metric-control').addEventListener('click', (event) => {
     const button = event.target.closest('[data-map-metric]');
     if (!button) return;
@@ -335,6 +346,19 @@ function bindEvents() {
     event.preventDefault();
     selectCountry(row.dataset.countryCode, true);
   });
+}
+
+function activateTab(tab, updateHash = true) {
+  if (!['overview', 'map', 'relationship', 'countries', 'method'].includes(tab)) return;
+  state.activeTab = tab;
+  document.querySelectorAll('[data-panel]').forEach((panel) => { panel.hidden = panel.dataset.panel !== tab; });
+  document.querySelectorAll('.dashboard-tabs [data-tab]').forEach((button) => {
+    const active = button.dataset.tab === tab;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-selected', active);
+  });
+  if (updateHash) history.replaceState(null, '', `#${tab}`);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function updateActiveButtons(containerSelector, activeButton) {
@@ -467,7 +491,7 @@ function renderCountryProfile(country) {
       <div class="mortality-stat">
         <span>WHO mortality estimate</span>
         <div><strong>${mortalityText}</strong><em>deaths / 100k</em></div>
-        <p>${Number.isFinite(country.malnutritionDeaths) ? `${number.format(country.malnutritionDeaths)} estimated deaths from ` : 'from '}protein–energy malnutrition${country.mortalityYear ? `, ${country.mortalityYear}` : ''}</p>
+        <p>${Number.isFinite(country.malnutritionDeaths) ? `${number.format(country.malnutritionDeaths)} average annual estimated deaths from ` : 'from '}protein–energy malnutrition${country.mortalityPeriod ? `, ${country.mortalityPeriod}` : ''}</p>
       </div>
     </div>
     <p class="profile-caveat"><strong>Important:</strong> the values share a population basis for legibility; one is not divided by the other, and they should not be read as exchangeable quantities.</p>
