@@ -1,0 +1,22 @@
+{
+  "name": "waste-want",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "data": "node scripts/build-data.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "node scripts/check-data.mjs && vite build"
+  },
+  "dependencies": {
+    "d3": "^7.9.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2",
+    "world-countries": "^5.1.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.4"
+  }
+}
