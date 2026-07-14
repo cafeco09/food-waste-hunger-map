@@ -403,25 +403,82 @@ input:focus-visible,
   padding: 7rem 1.5rem;
 }
 
-.regions-section { min-height: calc(100vh - 72px); }
-.region-insight-filter { min-width: 190px; }
-.region-intro { max-width: 760px; margin: -1.5rem 0 2rem; color: var(--ink-soft); }
-.interpretation-callout { display: grid; grid-template-columns: 180px 1fr; gap: 1.5rem; margin: 0 0 2rem; padding: 1.25rem 1.5rem; border-left: 4px solid var(--orange); background: var(--white); }
-.interpretation-callout span { font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.interpretation-callout p { max-width: 850px; margin: 0; font-family: var(--serif); font-size: 1.05rem; }
-.region-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }
-.region-summary article { padding: 1.6rem; background: var(--white); }
-.region-summary span { display: block; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.region-summary strong { display: block; margin: .45rem 0; color: var(--red-deep); font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 400; }
-.region-summary p { margin: 0; color: var(--ink-soft); font-size: .78rem; }
-.region-ranking { margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--line); background: rgba(255,255,255,.28); }
-.region-country-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 1rem; background: var(--line); }
-.region-country-list button { display: grid; grid-template-columns: 2rem 1fr auto; gap: 1rem; align-items: center; padding: 1rem; border: 0; background: var(--paper); color: inherit; text-align: left; cursor: pointer; }
-.region-country-list button:hover { background: var(--white); }
-.region-country-list b { color: var(--orange); font-size: .72rem; }
-.region-country-list span { display: grid; }
-.region-country-list small { color: var(--ink-soft); }
-.region-country-list i { font-style: normal; font-size: .75rem; font-weight: 800; }
+.regions-section {
+  min-height: calc(100vh - 72px);
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
+}
+
+.region-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.region-heading-copy h2 {
+  max-width: 850px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: .95;
+}
+
+.region-heading-copy h2 em { color: var(--red-deep); font-weight: 400; }
+.region-intro { max-width: 720px; margin: 1.3rem 0 0; color: var(--ink-soft); font-size: .9rem; }
+
+.region-insight-filter {
+  display: grid;
+  gap: .45rem;
+  min-width: 220px;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.45);
+}
+
+.region-insight-filter span { font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.region-insight-filter select { width: 100%; border: 0; background: transparent; color: var(--ink); font-family: var(--serif); font-size: 1.25rem; cursor: pointer; }
+
+.region-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.region-metric { position: relative; min-height: 210px; padding: 1.4rem; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--white); box-shadow: 0 12px 30px rgba(53,42,31,.05); }
+.region-metric::after { position: absolute; right: -2.5rem; bottom: -3.5rem; width: 9rem; height: 9rem; border: 1px solid currentColor; border-radius: 50%; opacity: .09; content: ''; }
+.region-metric > div { display: flex; align-items: center; gap: .7rem; }
+.region-metric b { display: grid; width: 1.7rem; height: 1.7rem; place-content: center; border-radius: 50%; background: var(--paper-deep); font-size: .58rem; }
+.region-metric span { font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.region-metric strong { display: flex; align-items: baseline; gap: .55rem; margin: 1.55rem 0 .55rem; font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.8rem); font-weight: 400; letter-spacing: -.05em; line-height: .9; }
+.region-metric strong small { color: var(--ink-soft); font-family: var(--sans); font-size: .66rem; font-weight: 750; letter-spacing: .03em; }
+.region-metric p { margin: 0; color: var(--ink-soft); font-size: .72rem; }
+.region-metric.waste { color: #a84c22; }
+.region-metric.hunger { color: var(--red); }
+.region-metric.mortality { color: var(--red-deep); }
+
+.region-layout { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(290px, .75fr); gap: 1.25rem; align-items: stretch; margin-top: 1.25rem; }
+.region-ranking { padding: 1.5rem; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.5); }
+.region-ranking-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; padding: .25rem .2rem 1.2rem; }
+.region-ranking-head span { color: var(--red); font-size: .64rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.region-ranking-head h3 { margin: .25rem 0 0; font-family: var(--serif); font-size: 1.55rem; font-weight: 400; }
+.region-ranking-head > strong { color: var(--ink-soft); font-size: .7rem; font-weight: 600; }
+.region-country-list { display: grid; gap: .45rem; }
+.region-country-list button { display: grid; grid-template-columns: 2rem 1fr auto; gap: .9rem; align-items: center; padding: .78rem .85rem; border: 1px solid transparent; border-radius: 11px; background: var(--paper); color: inherit; text-align: left; cursor: pointer; transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+.region-country-list button:hover { border-color: var(--line); background: var(--white); transform: translateX(3px); }
+.region-country-list b { color: var(--orange); font-size: .67rem; }
+.region-country-list span { display: grid; gap: .08rem; }
+.region-country-list small { overflow: hidden; color: var(--ink-soft); font-size: .65rem; text-overflow: ellipsis; white-space: nowrap; }
+.region-country-list i { color: var(--red-deep); font-style: normal; font-size: .68rem; font-weight: 800; }
+
+.region-context { display: flex; flex-direction: column; padding: 1.8rem; border-radius: 20px; color: var(--white); background: var(--dark); box-shadow: 0 18px 36px rgba(23,33,28,.12); }
+.region-context > span { color: var(--orange-soft); font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.region-context > h3 { margin: 1.2rem 0 1rem; font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; line-height: 1.05; }
+.region-context > p { margin: 0; color: #c6ccc7; font-size: .84rem; }
+.region-context > div { margin-top: auto; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.14); }
+.region-context > div strong { color: var(--orange-soft); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; }
+.region-context > div p { margin: .45rem 0 0; color: #9ca69f; font-size: .7rem; }
 
 .section-heading {
   display: grid;
@@ -1221,6 +1278,8 @@ footer > a:last-child { color: #c2c9c3; text-decoration: none; }
   .versus-mark { margin: -3.8rem 0; position: relative; z-index: 1; }
   .profile-lower { grid-template-columns: 1fr; }
   .method-grid { grid-template-columns: repeat(2, 1fr); }
+  .region-layout { grid-template-columns: 1fr; }
+  .region-context > div { margin-top: 2rem; }
 }
 
 @media (max-width: 760px) {
@@ -1235,10 +1294,14 @@ footer > a:last-child { color: #c2c9c3; text-decoration: none; }
   .fact-number { font-size: 3.7rem; }
   .hero-note { grid-template-columns: auto 1fr; margin-top: 2.5rem; }
   .period-strip { grid-template-columns: 1fr; margin: 0 1rem 2rem; }
-  .region-summary, .region-country-list { grid-template-columns: 1fr; }
-  .interpretation-callout { grid-template-columns: 1fr; gap: .5rem; }
+  .region-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .region-heading-copy h2 { font-size: clamp(3rem, 14vw, 4.8rem); }
+  .region-insight-filter { min-width: 0; }
+  .region-summary { grid-template-columns: 1fr; }
+  .region-metric { min-height: 170px; }
   .region-country-list button { grid-template-columns: 1.6rem 1fr; }
   .region-country-list button i { display: none; }
+  .region-ranking-head { align-items: start; flex-direction: column; }
   .statement { padding-top: 5rem; padding-bottom: 5rem; }
   .section-heading { grid-template-columns: 1fr; gap: 1.2rem; }
   .map-toolbar,
