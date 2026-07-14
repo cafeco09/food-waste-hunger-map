@@ -216,39 +216,43 @@ app.innerHTML = `
     </section>
 
     <section class="countries-section tab-panel" data-panel="countries" id="countries" aria-labelledby="countries-title" ${state.activeTab === 'countries' ? '' : 'hidden'}>
-      <div class="section-heading">
-        <div>
-          <span class="section-index">03 / Countries</span>
-          <h2 id="countries-title">The full country view</h2>
+      <div class="countries-header">
+        <div class="countries-heading-copy">
+          <span class="section-index">04 / Countries</span>
+          <h2 id="countries-title">Find a country.<br><em>See the full picture.</em></h2>
+          <p>Search by name, narrow the list by region, or sort by the measure that matters to you. Select any row to open its complete map profile.</p>
         </div>
-        <p>Search, sort and compare every country covered by the UNEP food-waste estimates.</p>
+        <aside class="country-howto"><span>How to compare</span><ol><li>Choose a region</li><li>Sort an indicator</li><li>Open a country profile</li></ol></aside>
       </div>
 
-      <div class="table-controls">
+      <div class="country-toolbar">
         <label class="search-field">
-          <span class="visually-hidden">Search countries</span>
-          <span aria-hidden="true">⌕</span>
-          <input id="table-search" type="search" placeholder="Search a country" autocomplete="off" />
+          <span aria-hidden="true">⌕</span><span class="visually-hidden">Search countries</span>
+          <input id="table-search" type="search" placeholder="Type a country name…" autocomplete="off" />
         </label>
-        <label class="filter-field">
-          <span>Region</span>
-          <select id="region-select">
-            <option>All</option>
-            ${[...new Set(countries.map((country) => country.region))].sort().map((region) => `<option>${region}</option>`).join('')}
-          </select>
-        </label>
-        <p id="result-count" class="result-count"></p>
+        <div class="country-filter-group">
+          <label class="country-filter"><span>Region</span><select id="region-select"><option>All</option>${[...new Set(countries.map((country) => country.region))].sort().map((region) => `<option>${region}</option>`).join('')}</select></label>
+          <label class="country-filter"><span>Sort by</span><select id="country-sort-select"><option value="undernourishedPct-desc">Highest undernourishment</option><option value="undernourishedPct-asc">Lowest undernourishment</option><option value="malnutritionDeathRate-desc">Highest mortality</option><option value="malnutritionDeathRate-asc">Lowest mortality</option><option value="foodWasteKg-desc">Highest household waste</option><option value="foodWasteKg-asc">Lowest household waste</option><option value="name-asc">Country A–Z</option><option value="name-desc">Country Z–A</option></select></label>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+      </div>
+
+      <div class="country-guide" aria-label="Indicator guide">
+        <span><i class="waste"></i><strong>Household waste</strong><small>kg discarded per person</small></span>
+        <span><i class="hunger"></i><strong>Undernourished</strong><small>share without sufficient habitual calories</small></span>
+        <span><i class="mortality"></i><strong>Mortality</strong><small>protein–energy malnutrition deaths per 100,000</small></span>
       </div>
 
       <div class="table-wrap">
         <table>
+          <caption class="visually-hidden">Country comparison of household food waste, undernourishment and malnutrition mortality</caption>
           <thead>
             <tr>
               <th><button type="button" data-sort="name">Country <span>↕</span></button></th>
               <th><button type="button" data-sort="foodWasteKg">Household waste <small>kg / person / yr</small> <span>↕</span></button></th>
               <th><button type="button" data-sort="undernourishedPct">Undernourished <small>% of population</small> <span>↕</span></button></th>
-              <th><button type="button" data-sort="malnutritionDeathRate">Malnutrition deaths <small>per 100,000 · 3-year avg</small> <span>↕</span></button></th>
-              <th>Pattern</th>
+              <th><button type="button" data-sort="malnutritionDeathRate">Malnutrition mortality <small>deaths per 100,000 · ${data.sources.mortality.period} avg</small> <span>↕</span></button></th>
+              <th>Relative pattern <small>compared with global medians</small></th>
             </tr>
           </thead>
           <tbody id="country-table-body"></tbody>
@@ -260,7 +264,7 @@ app.innerHTML = `
     <section class="method-section tab-panel" data-panel="method" id="method" aria-labelledby="method-title" ${state.activeTab === 'method' ? '' : 'hidden'}>
       <div class="section-heading light-heading">
         <div>
-          <span class="section-index">04 / Method</span>
+          <span class="section-index">05 / Method</span>
           <h2 id="method-title">What the numbers mean</h2>
         </div>
         <p>Transparent definitions are part of the visualisation, not an optional appendix.</p>
@@ -344,6 +348,13 @@ function bindEvents() {
     renderTable();
   });
 
+  document.querySelector('#country-sort-select').addEventListener('change', (event) => {
+    const [key, direction] = event.target.value.split('-');
+    state.sortKey = key;
+    state.sortDirection = direction;
+    renderTable();
+  });
+
   document.querySelector('#insight-region-select').addEventListener('change', (event) => {
     state.insightRegion = event.target.value;
     renderRegionInsights();
@@ -359,6 +370,7 @@ function bindEvents() {
       state.sortDirection = key === 'name' ? 'asc' : 'desc';
     }
     renderTable();
+    document.querySelector('#country-sort-select').value = `${state.sortKey}-${state.sortDirection}`;
   });
 
   document.querySelector('#country-table-body').addEventListener('click', (event) => {
@@ -581,7 +593,7 @@ function renderTable() {
     const pattern = patternFor(country);
     return `
       <tr data-country-code="${country.code}" class="${country.code === state.selectedCode ? 'selected' : ''}" tabindex="0">
-        <td><strong>${country.name}</strong><span>${country.code} · ${country.region}</span></td>
+        <td><strong>${country.name}</strong><span>${country.code} · ${country.region} · open profile →</span></td>
         <td><strong>${oneDecimal.format(country.foodWasteKg)}</strong><span class="mini-bar"><i style="width:${Math.min(country.foodWasteKg / 1.7, 100)}%"></i></span></td>
         <td>${metricCell(country.undernourishedPct, '%', 50)}</td>
         <td>${metricCell(country.malnutritionDeathRate, '', 70)}</td>
@@ -592,6 +604,13 @@ function renderTable() {
 
   document.querySelector('#result-count').textContent = `${filtered.length} of ${countries.length} countries`;
   document.querySelector('#table-empty').hidden = filtered.length > 0;
+  document.querySelectorAll('thead [data-sort]').forEach((button) => {
+    const active = button.dataset.sort === state.sortKey;
+    button.classList.toggle('active', active);
+    button.closest('th').setAttribute('aria-sort', active ? (state.sortDirection === 'asc' ? 'ascending' : 'descending') : 'none');
+    const arrow = button.querySelector(':scope > span');
+    if (arrow) arrow.textContent = active ? (state.sortDirection === 'asc' ? '↑' : '↓') : '↕';
+  });
 }
 
 function metricCell(value, suffix, max) {
